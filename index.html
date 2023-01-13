@@ -15,7 +15,7 @@
     <div class="container">
 <!-------------- NAME / TYPE FORM --------------->
         <div class="input-container">
-            <h2>Pokemon Maker</h2>
+            <h2>Card Maker</h2>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" maxlength="20"><br>
             <label for="hp">HP:</label>
@@ -287,7 +287,10 @@
                     <option value="3">3</option>
                     <option value="4">4</option>
                 </select><br>
-            <button id="update">Submit</button>
+            <div class="buttons-container">
+                <button id="update">Submit</button>
+                <button id="reload" onclick="location.reload()">↻</button>
+            </div>
         </div>
 <!-------------- CARD MAIN --------------->
         <div>
