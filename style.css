@@ -74,7 +74,7 @@ body {
     justify-content: center;
     margin-left: 20px;
     width: 390px;
-    height: 50px;
+    height: 100px;
     border: 5px dotted black;
     color: black;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -464,7 +464,9 @@ select {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     border: 1px solid black;
-    background-color: rgb(78, 114, 114);
+    background-color: #192653;
+    color: #fdcb00;
+    font-size: 14pt;
     text-align: center;
 }
 
