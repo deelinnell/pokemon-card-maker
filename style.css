@@ -3,12 +3,6 @@
     padding: 0;
 }
 
-#canvas {
-    background-color: #111;
-    width: 353px;
-    height: 227px;
-}
-
 .card-picture {
     outline: 1px solid white;
 }
