@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <script src=
+    "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+<!-------------- NAME / TYPE FORM --------------->
+        <div class="input-container">
+            <h2>Pokemon Maker</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" maxlength="20"><br>
+            <label for="hp">HP:</label>
+            <input type="number" id="hp" name="hp" min="10" max="340" step="10"><br>
+            <div id="type-selector">
+                <p>Type:</p>
+                <div id="type-dropdown">
+                    <div class="current-type">
+                        <div id="current-type-img">
+                        </div>
+                        <ul id="type-list">
+                            <li value="" class="select-type"></li>
+                            <li value="plant" class="select-type"><img src="img/plant.png" alt="plant"></li>
+                            <li value="water" class="select-type"><img src="img/water.png" alt="water"></li>
+                            <li value="fire" class="select-type"><img src="img/fire.png" alt="fire"></li>
+                            <li value="normal" class="select-type"><img src="img/normal.png" alt="normal"></li>
+                            <li value="electric" class="select-type"><img src="img/electric.png" alt="electric"></li>
+                            <li value="psychic" class="select-type"><img src="img/psychic.png" alt="psychic"></li>
+                            <li value="fighting" class="select-type"><img src="img/fighting.png" alt="fighting"></li>
+                            <li value="dark" class="select-type"><img src="img/dark.png" alt="dark"></li>
+                            <li value="metal" class="select-type"><img src="img/metal.png" alt="metal"></li>
+                        </ul>
+                    </div>
+                    <div class="type-button" id="type-button">▼</div>
+                </div>
+            </div>
+<!-------------- ATTACK 1 FORM --------------->
+            <div class="attack-form" id="attack1">
+                <label for="attack1-name">Attack Name:</label>
+                <input type="text" id="attack1-name" name="attack1-name" maxlength="20">
+                <div class="attack-cost-container">
+                    <div class="attacks-selector">
+                        <p>Cost:</p>
+                        <div class="attack-dropdown" id="attack-1-cost-1">
+                            <div class="current-type">
+                                <div id="current-cost-1-1">
+                                </div>
+                                <ul id="attack-cost-list-1-1">
+                                    <li value="" class="cost-1-1"></li>
+                                    <li value="plant" class="cost-1-1"><img src="img/plant.png" alt="plant"></li>
+                                    <li value="water" class="cost-1-1"><img src="img/water.png" alt="water"></li>
+                                    <li value="fire" class="cost-1-1"><img src="img/fire.png" alt="fire"></li>
+                                    <li value="normal" class="cost-1-1"><img src="img/normal.png" alt="normal"></li>
+                                    <li value="electric" class="cost-1-1"><img src="img/electric.png" alt="electric"></li>
+                                    <li value="psychic" class="cost-1-1"><img src="img/psychic.png" alt="psychic"></li>
+                                    <li value="fighting" class="cost-1-1"><img src="img/fighting.png" alt="fighting"></li>
+                                    <li value="dark" class="cost-1-1"><img src="img/dark.png" alt="dark"></li>
+                                    <li value="metal" class="cost-1-1"><img src="img/metal.png" alt="metal"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="type-button" id="attack-1-cost-1-button">▼</div>
+                    </div>
+                    <div class="attacks-selector">
+                        <div class="attack-dropdown" id="attack-1-cost-2">
+                            <div class="current-type">
+                                <div id="current-cost-1-2">
+                                </div>
+                                <ul id="attack-cost-list-1-2">
+                                    <li value="" class="cost-1-2"></li>
+                                    <li value="plant" class="cost-1-2"><img src="img/plant.png" alt="plant"></li>
+                                    <li value="water" class="cost-1-2"><img src="img/water.png" alt="water"></li>
+                                    <li value="fire" class="cost-1-2"><img src="img/fire.png" alt="fire"></li>
+                                    <li value="normal" class="cost-1-2"><img src="img/normal.png" alt="normal"></li>
+                                    <li value="electric" class="cost-1-2"><img src="img/electric.png" alt="electric"></li>
+                                    <li value="psychic" class="cost-1-2"><img src="img/psychic.png" alt="psychic"></li>
+                                    <li value="fighting" class="cost-1-2"><img src="img/fighting.png" alt="fighting"></li>
+                                    <li value="dark" class="cost-1-2"><img src="img/dark.png" alt="dark"></li>
+                                    <li value="metal" class="cost-1-2"><img src="img/metal.png" alt="metal"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="type-button" id="attack-1-cost-2-button">▼</div>
+                    </div>
+                    <div class="attacks-selector">
+                        <div class="attack-dropdown" id="attack-1-cost-3">
+                            <div class="current-type">
+                                <div id="current-cost-1-3">
+                                </div>
+                                <ul id="attack-cost-list-1-3">
+                                    <li value="" class="cost-1-3"></li>
+                                    <li value="plant" class="cost-1-3"><img src="img/plant.png" alt="plant"></li>
+                                    <li value="water" class="cost-1-3"><img src="img/water.png" alt="water"></li>
+                                    <li value="fire" class="cost-1-3"><img src="img/fire.png" alt="fire"></li>
+                                    <li value="normal" class="cost-1-3"><img src="img/normal.png" alt="normal"></li>
+                                    <li value="electric" class="cost-1-3"><img src="img/electric.png" alt="electric"></li>
+                                    <li value="psychic" class="cost-1-3"><img src="img/psychic.png" alt="psychic"></li>
+                                    <li value="fighting" class="cost-1-3"><img src="img/fighting.png" alt="fighting"></li>
+                                    <li value="dark" class="cost-1-3"><img src="img/dark.png" alt="dark"></li>
+                                    <li value="metal" class="cost-1-3"><img src="img/metal.png" alt="metal"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="type-button" id="attack-1-cost-3-button">▼</div>
+                    </div>
+                    <div class="attacks-selector">
+                        <div class="attack-dropdown" id="attack-1-cost-4">
+                            <div class="current-type">
+                                <div id="current-cost-1-4">
+                                </div>
+                                <ul id="attack-cost-list-1-4">
+                                    <li value="" class="cost-1-4"></li>
+                                    <li value="plant" class="cost-1-4"><img src="img/plant.png" alt="plant"></li>
+                                    <li value="water" class="cost-1-4"><img src="img/water.png" alt="water"></li>
+                                    <li value="fire" class="cost-1-4"><img src="img/fire.png" alt="fire"></li>
+                                    <li value="normal" class="cost-1-4"><img src="img/normal.png" alt="normal"></li>
+                                    <li value="electric" class="cost-1-4"><img src="img/electric.png" alt="electric"></li>
+                                    <li value="psychic" class="cost-1-4"><img src="img/psychic.png" alt="psychic"></li>
+                                    <li value="fighting" class="cost-1-4"><img src="img/fighting.png" alt="fighting"></li>
+                                    <li value="dark" class="cost-1-4"><img src="img/dark.png" alt="dark"></li>
+                                    <li value="metal" class="cost-1-4"><img src="img/metal.png" alt="metal"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="type-button" id="attack-1-cost-4-button">▼</div>
+                    </div>
+                </div>
+                <p>Attack Text:</p>
+                <textarea id="attack-text-1" name="attack-text-1" rows="4" cols="30"></textarea><br>
+                <label for="attack-damage-1">Damage:</label>
+                <input type="number" id="attack-damage-1" name="attack-damage-1"  min="10" max="500" step="10"><br>
+            </div>
+<!-------------- ATTACK 2 FORM --------------->
+            <div class="attack-form" id="attack2">
+                <label for="attack1-name">Attack Name:</label>
+                <input type="text" id="attack2-name" name="attack2-name" maxlength="20">
+                <div class="attack-cost-container">
+                    <div class="attacks-selector">
+                        <p>Cost:</p>
+                        <div class="attack-dropdown" id="attack-2-cost-1">
+                            <div class="current-type">
+                                <div id="current-cost-2-1">
+                                </div>
+                                <ul id="attack-cost-list-2-1">
+                                    <li value="" class="cost-2-1"></li>
+                                    <li value="plant" class="cost-2-1"><img src="img/plant.png" alt="plant"></li>
+                                    <li value="water" class="cost-2-1"><img src="img/water.png" alt="water"></li>
+                                    <li value="fire" class="cost-2-1"><img src="img/fire.png" alt="fire"></li>
+                                    <li value="normal" class="cost-2-1"><img src="img/normal.png" alt="normal"></li>
+                                    <li value="electric" class="cost-2-1"><img src="img/electric.png" alt="electric"></li>
+                                    <li value="psychic" class="cost-2-1"><img src="img/psychic.png" alt="psychic"></li>
+                                    <li value="fighting" class="cost-2-1"><img src="img/fighting.png" alt="fighting"></li>
+                                    <li value="dark" class="cost-2-1"><img src="img/dark.png" alt="dark"></li>
+                                    <li value="metal" class="cost-2-1"><img src="img/metal.png" alt="metal"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="type-button" id="attack-2-cost-1-button">▼</div>
+                    </div>
+                    <div class="attacks-selector">
+                        <div class="attack-dropdown" id="attack-2-cost-2">
+                            <div class="current-type">
+                                <div id="current-cost-2-2">
+                                </div>
+                                <ul id="attack-cost-list-2-2">
+                                    <li value="" class="cost-2-2"></li>
+                                    <li value="plant" class="cost-2-2"><img src="img/plant.png" alt="plant"></li>
+                                    <li value="water" class="cost-2-2"><img src="img/water.png" alt="water"></li>
+                                    <li value="fire" class="cost-2-2"><img src="img/fire.png" alt="fire"></li>
+                                    <li value="normal" class="cost-2-2"><img src="img/normal.png" alt="normal"></li>
+                                    <li value="electric" class="cost-2-2"><img src="img/electric.png" alt="electric"></li>
+                                    <li value="psychic" class="cost-2-2"><img src="img/psychic.png" alt="psychic"></li>
+                                    <li value="fighting" class="cost-2-2"><img src="img/fighting.png" alt="fighting"></li>
+                                    <li value="dark" class="cost-2-2"><img src="img/dark.png" alt="dark"></li>
+                                    <li value="metal" class="cost-2-2"><img src="img/metal.png" alt="metal"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="type-button" id="attack-2-cost-2-button">▼</div>
+                    </div>
+                    <div class="attacks-selector">
+                        <div class="attack-dropdown" id="attack-2-cost-3">
+                            <div class="current-type">
+                                <div id="current-cost-2-3">
+                                </div>
+                                <ul id="attack-cost-list-2-3">
+                                    <li value="" class="cost-2-3"></li>
+                                    <li value="plant" class="cost-2-3"><img src="img/plant.png" alt="plant"></li>
+                                    <li value="water" class="cost-2-3"><img src="img/water.png" alt="water"></li>
+                                    <li value="fire" class="cost-2-3"><img src="img/fire.png" alt="fire"></li>
+                                    <li value="normal" class="cost-2-3"><img src="img/normal.png" alt="normal"></li>
+                                    <li value="electric" class="cost-2-3"><img src="img/electric.png" alt="electric"></li>
+                                    <li value="psychic" class="cost-2-3"><img src="img/psychic.png" alt="psychic"></li>
+                                    <li value="fighting" class="cost-2-3"><img src="img/fighting.png" alt="fighting"></li>
+                                    <li value="dark" class="cost-2-3"><img src="img/dark.png" alt="dark"></li>
+                                    <li value="metal" class="cost-2-3"><img src="img/metal.png" alt="metal"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="type-button" id="attack-2-cost-3-button">▼</div>
+                    </div>
+                    <div class="attacks-selector">
+                        <div class="attack-dropdown" id="attack-2-cost-4">
+                            <div class="current-type">
+                                <div id="current-cost-2-4">
+                                </div>
+                                <ul id="attack-cost-list-2-4">
+                                    <li value="" class="cost-2-4"></li>
+                                    <li value="plant" class="cost-2-4"><img src="img/plant.png" alt="plant"></li>
+                                    <li value="water" class="cost-2-4"><img src="img/water.png" alt="water"></li>
+                                    <li value="fire" class="cost-2-4"><img src="img/fire.png" alt="fire"></li>
+                                    <li value="normal" class="cost-2-4"><img src="img/normal.png" alt="normal"></li>
+                                    <li value="electric" class="cost-2-4"><img src="img/electric.png" alt="electric"></li>
+                                    <li value="psychic" class="cost-2-4"><img src="img/psychic.png" alt="psychic"></li>
+                                    <li value="fighting" class="cost-2-4"><img src="img/fighting.png" alt="fighting"></li>
+                                    <li value="dark" class="cost-2-4"><img src="img/dark.png" alt="dark"></li>
+                                    <li value="metal" class="cost-2-4"><img src="img/metal.png" alt="metal"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="type-button" id="attack-2-cost-4-button">▼</div>
+                    </div>
+                </div>
+                <p>Attack Text:</p>
+                <textarea id="attack-text-2" name="attack-text-2" rows="4" cols="30"></textarea><br>
+                <label for="attack-damage-2">Damage:</label>
+                <input type="number" id="attack-damage-2" name="attack-damage-2" min="10" max="500"  step="10"><br>
+            </div>
+            <!-------------- FOOTER FORM --------------->
+            <div class="weakness-selector">
+                <p>Weakness:</p>
+                <div class="weakness-dropdown" id="weakness-dropdown">
+                    <div class="current-type">
+                        <div id="current-weakness">
+                        </div>
+                        <ul id="weakness-list">
+                            <li value="" class="weakness-type"></li>
+                            <li value="plant" class="weakness-type"><img src="img/plant.png" alt="plant"></li>
+                            <li value="water" class="weakness-type"><img src="img/water.png" alt="water"></li>
+                            <li value="fire" class="weakness-type"><img src="img/fire.png" alt="fire"></li>
+                            <li value="normal" class="weakness-type"><img src="img/normal.png" alt="normal"></li>
+                            <li value="electric" class="weakness-type"><img src="img/electric.png" alt="electric"></li>
+                            <li value="psychic" class="weakness-type"><img src="img/psychic.png" alt="psychic"></li>
+                            <li value="fighting" class="weakness-type"><img src="img/fighting.png" alt="fighting"></li>
+                            <li value="dark" class="weakness-type"><img src="img/dark.png" alt="dark"></li>
+                            <li value="metal" class="weakness-type"><img src="img/metal.png" alt="metal"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="type-button" id="weakness-button">▼</div>
+            </div>
+            <div class="resistance-selector">
+                <p>Resistance:</p>
+                <div class="resistance-dropdown" id="resistance-dropdown">
+                    <div class="current-type">
+                        <div id="current-resistance">
+                        </div>
+                        <ul id="resistance-list">
+                            <li value="" class="resistance-type"></li>
+                            <li value="plant" class="resistance-type"><img src="img/plant.png" alt="plant"></li>
+                            <li value="water" class="resistance-type"><img src="img/water.png" alt="water"></li>
+                            <li value="fire" class="resistance-type"><img src="img/fire.png" alt="fire"></li>
+                            <li value="normal" class="resistance-type"><img src="img/normal.png" alt="normal"></li>
+                            <li value="electric" class="resistance-type"><img src="img/electric.png" alt="electric"></li>
+                            <li value="psychic" class="resistance-type"><img src="img/psychic.png" alt="psychic"></li>
+                            <li value="fighting" class="resistance-type"><img src="img/fighting.png" alt="fighting"></li>
+                            <li value="dark" class="resistance-type"><img src="img/dark.png" alt="dark"></li>
+                            <li value="metal" class="resistance-type"><img src="img/metal.png" alt="metal"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="type-button" id="resistance-button">▼</div>
+            </div>
+            <label for="retreat">Retreat:</label>
+              <select id="retreat" name="retreat">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select><br>
+            <button id="update">Submit</button>
+        </div>
+<!-------------- CARD MAIN --------------->
+        <div>
+            <div class="img-drag">
+                Drag Image File Here
+            </div>
+            <div class="card" id="card">
+                <div id="question-mark">
+                    <p draggable="true">?</p>
+                </div>
+                <div class="card-container">
+                    <div class="card-top">
+                        <div class="card-header">
+                            <div class="card-header-right">
+                                <div class="basic">
+                                    <p>BASIC</p>
+                                </div>
+                                <h1 class="card-name"></h1>
+                            </div>
+                            <div class="card-header-left">
+                                <h2>HP<span class="card-hp"></span></h2>
+                                <div class="type-container">
+                                    <div id="card-type">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-picture">
+                        </div>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="attack-container">
+                        </div>
+                        <div class="card-footer">
+                            <div class="footer-bar">
+                                <div class="weakness-bar">
+                                    <div class="weakness">
+                                        <p class="weakness-text">weakness</p>
+                                        <div id="weakness-img"></div>
+                                        <p class="weakness-number"></p>
+                                    </div>
+                                    <p>|</p>
+                                    <div class="resistance">
+                                        <p class="resistance-text">resistance</p>
+                                        <div id="resistance-img"></div>
+                                        <p class="resistance-number"></p>
+                                    </div>
+                                </div>
+                                <div class="retreat-bar">
+                                    <div class="retreat">
+                                        <p class="retreat-text">retreat</p>
+                                        <div id="retreat-img"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+</body>
+</html>
