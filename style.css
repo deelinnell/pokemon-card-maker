@@ -458,7 +458,7 @@ select {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     border: 1px solid black;
-    background-color: #192653;
+    background: linear-gradient(to bottom, #192653, #254a7c);
     color: #fdcb00;
     font-size: 14pt;
     text-align: center;
@@ -591,7 +591,7 @@ select {
     border-radius: 5px;
     font-size: 20pt;
     font-weight: bold;
-    background: linear-gradient(to right, #192653, #254a7c);
+    background: linear-gradient(to bottom, #192653, #254a7c);
     color: #fdcb00;
 }
 
@@ -609,7 +609,7 @@ select {
     margin-left: 5px;
     font-weight: bold;
     color: #fdcb00;
-    background: linear-gradient(to right, #192653, #254a7c);
+    background: linear-gradient(to bottom, #192653, #254a7c);
     border-radius: 5px;
 }
 
