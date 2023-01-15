@@ -1,36 +1,66 @@
-const drop = document.querySelector('.img-drag')
+const largeImgDrop = document.querySelector('.img-drop')
 
-drop.addEventListener('dragenter', event => {
+largeImgDrop.addEventListener('dragenter', event => {
     event.preventDefault()
-    drop.classList.add('active')
+    largeImgDrop.classList.add('active')
 })
 
-drop.addEventListener('dragleave', event => {
+largeImgDrop.addEventListener('dragleave', event => {
     event.preventDefault()
-    drop.classList.remove('active')
+    largeImgDrop.classList.remove('active')
 })
 
-drop.addEventListener('dragover', event => {
+largeImgDrop.addEventListener('dragover', event => {
     event.preventDefault()
 })
 
-drop.addEventListener('drop', event => {
+largeImgDrop.addEventListener('drop', event => {
     event.preventDefault()
-    drop.classList.remove('active')
+    largeImgDrop.classList.remove('active')
     const file = event.dataTransfer.files[0]
     const reader = new FileReader()
     reader.readAsDataURL(file)
     reader.addEventListener('loadend', () => {
         const img = document.createElement('img')
         img.src = reader.result
-        document.querySelector('.card-picture').replaceChildren(img)
+        document.querySelector('.card-img').replaceChildren(img)
+    })
+})
+
+const smallImgDrop = document.querySelector('.img-drop-small')
+
+smallImgDrop.addEventListener('dragenter', event => {
+    event.preventDefault()
+    smallImgDrop.classList.add('active')
+})
+
+smallImgDrop.addEventListener('dragleave', event => {
+    event.preventDefault()
+    smallImgDrop.classList.remove('active')
+})
+
+smallImgDrop.addEventListener('dragover', event => {
+    event.preventDefault()
+})
+
+smallImgDrop.addEventListener('drop', event => {
+    event.preventDefault()
+    smallImgDrop.classList.remove('active')
+    const file = event.dataTransfer.files[0]
+    const reader = new FileReader()
+    reader.readAsDataURL(file)
+    reader.addEventListener('loadend', () => {
+        const img = document.createElement('img')
+        img.src = reader.result
+        document.querySelector('.small-img').replaceChildren(img)
     })
 })
 
 let currentType = '',
     pastType = '',
     weakness = '',
-    resistance = ''
+    resistance = '',
+    pastStage = ''
 
 
 const submit = document.getElementById('submit')
@@ -41,21 +71,31 @@ function updateContent() {
     document.getElementById('question-mark').style.display = 'none'
 
     document.querySelector('.card-name').innerHTML = $('input[type=text][name=name]').val()
-    document.querySelector('.card-hp').innerHTML = $('input[name=hp]').val()
+    document.querySelector('.hp').innerHTML = $('input[name=hp]').val()
+
+    const stage = $('select[name=stage]').val()
 
     if (currentType !== '') {
-        const typeImg = document.createElement('img')
-        typeImg.setAttribute('src', 'img/' + currentType + '.png')
-        document.getElementById('card-type').replaceChildren(typeImg)
+        if (pastStage !== '') {
+            document.getElementById('card').classList.remove('card-' + pastType + '-' + pastStage)
+        }
+        document.getElementById('card').classList.add('card-' + currentType + '-' + stage)
 
-        document.querySelector('.card-container').classList.remove('card-' + pastType)
-        document.querySelector('.card-container').classList.add('card-' + currentType)
+        pastType = currentType
+    }
+
+    pastStage = stage
+
+    if (pastStage === 'basic') {
+        document.querySelector('.small-img').style.display = 'none'
+    } else {
+        document.querySelector('.small-img').style.display = 'block'
     }
 
     if (currentType == 'dark') {
         document.querySelector('body').style.color = 'white'
     } else {
-        document.querySelector('body').style.color = 'black'
+        document.querySelector('body').style.color = '#111'
     }
 
     const attack1 = createAttack1()
@@ -67,7 +107,7 @@ function updateContent() {
         const weakImg = document.createElement('img')
         weakImg.setAttribute('src', 'img/' + weakness + '.png')
         document.getElementById('weakness-img').replaceChildren(weakImg)
-        document.querySelector('.weakness-number').innerHTML = 'x2'
+        document.querySelector('.weakness-number').innerHTML = '×2'
     } else {
         document.getElementById('weakness-img').replaceChildren('')
         document.querySelector('.weakness-number').innerHTML = ''
@@ -84,16 +124,14 @@ function updateContent() {
     }
 
     const retreat = $('select[name=retreat]').val()
-    const div = document.createElement('div')
+    document.getElementById('retreat-img').replaceChildren('')
 
     for (let i = retreat; i > 0; i--) {
         const img = document.createElement('img')
         img.setAttribute('src', 'img/normal.png')
-        div.appendChild(img)
+        document.getElementById('retreat-img').appendChild(img)
     }
-    document.getElementById('retreat-img').replaceChildren(div)
 
-    document.querySelector('.card').style.backgroundImage = 'radial-gradient(rgb(247, 226, 135), rgb(252, 211, 31), rgb(252, 227, 119))'
     document.querySelector('.card-container').style.display = 'block'
 }
 
@@ -241,6 +279,7 @@ document.querySelectorAll('.cost-1-4').forEach(type => {
 
 // Create Attack 1
 
+const energyImg = 'img/energy/'
 
 function createAttack1() {
 
@@ -255,22 +294,22 @@ function createAttack1() {
 
     if (attack1cost1) {
         const costImg = document.createElement('img');
-        costImg.setAttribute('src', 'img/' + attack1cost1 + '.png')
+        costImg.setAttribute('src', energyImg + attack1cost1 + '-energy.png')
         attackCost.appendChild(costImg)
     }
     if (attack1cost2) {
         const costImg = document.createElement('img');
-        costImg.setAttribute('src', 'img/' + attack1cost2 + '.png')
+        costImg.setAttribute('src', energyImg + attack1cost2 + '-energy.png')
         attackCost.appendChild(costImg)
     }
     if (attack1cost3) {
         const costImg = document.createElement('img');
-        costImg.setAttribute('src', 'img/' + attack1cost3 + '.png')
+        costImg.setAttribute('src', energyImg + attack1cost3 + '-energy.png')
         attackCost.appendChild(costImg)
     }
     if (attack1cost4) {
         const costImg = document.createElement('img');
-        costImg.setAttribute('src', 'img/' + attack1cost4 + '.png')
+        costImg.setAttribute('src', energyImg + attack1cost4 + '-energy.png')
         attackCost.appendChild(costImg)
     }
 
@@ -420,27 +459,26 @@ function createAttack2() {
 
     if (attack2cost1) {
         const costImg = document.createElement('img');
-        costImg.setAttribute('src', 'img/' + attack2cost1 + '.png')
+        costImg.setAttribute('src', energyImg + attack2cost1 + '-energy.png')
         attackCost.appendChild(costImg)
     }
     if (attack2cost2) {
         const costImg = document.createElement('img');
-        costImg.setAttribute('src', 'img/' + attack2cost2 + '.png')
+        costImg.setAttribute('src', energyImg + attack2cost2 + '-energy.png')
         attackCost.appendChild(costImg)
     }
     if (attack2cost3) {
         const costImg = document.createElement('img');
-        costImg.setAttribute('src', 'img/' + attack2cost3 + '.png')
+        costImg.setAttribute('src', energyImg + attack2cost3 + '-energy.png')
         attackCost.appendChild(costImg)
     }
     if (attack2cost4) {
         const costImg = document.createElement('img');
-        costImg.setAttribute('src', 'img/' + attack2cost4 + '.png')
+        costImg.setAttribute('src', energyImg + attack2cost4 + '-energy.png')
         attackCost.appendChild(costImg)
     }
 
     attackDiv.appendChild(attackCost)
-
 
     const attackName = document.createElement('p')
     attackName.classList.add('attack-name')
