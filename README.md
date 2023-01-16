@@ -1,4 +1,4 @@
-# pokemon-card-maker
+![pokemon-card-top](https://user-images.githubusercontent.com/61264144/212580105-55cc1f0d-4d9d-41a5-b6ed-2ffc1fb21581.png)
 
 I've always been a fan of the Pokemon TCG and thought it would be fun to make a custom card creator. At first I did all the card backgrounds and details with CSS, but I found some good quality card assests and decided to add those instead so it would look higher quality.
 
