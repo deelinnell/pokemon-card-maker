@@ -1,3 +1,6 @@
+
+// IMAGE DROP FUNCTIONS
+
 const largeImgDrop = document.querySelector('.img-drop')
 
 largeImgDrop.addEventListener('dragenter', event => {
@@ -56,6 +59,91 @@ smallImgDrop.addEventListener('drop', event => {
     })
 })
 
+// INPUT DROPDOWN
+
+const statsInput = document.getElementById('stats-dropdown')
+
+statsInput.onclick = () => statsDropdown()
+
+function statsDropdown() {
+    const body = document.getElementById('stats-body')
+    const arrow = document.getElementById('stats-arrrow')
+
+    if ($('#stats-dropdown').hasClass('closed')) {
+        body.style.height = '100px'
+        body.classList.add('border-bottom')
+        statsInput.classList.remove('closed')
+        statsInput.classList.add('opened')
+        arrow.classList.remove('down')
+        arrow.classList.add('up')
+    } else {
+        body.style.height = '0'
+        body.classList.remove('border-bottom')
+        statsInput.classList.remove('opened')
+        statsInput.classList.add('closed')
+        arrow.classList.remove('up')
+        arrow.classList.add('down')
+    }
+}
+
+const attack1Input = document.getElementById('attack-1-dropdown')
+
+attack1Input.onclick = () => attack1Dropdown()
+
+function attack1Dropdown() {
+    const body = document.getElementById('attack1')
+    const arrow = document.getElementById('attack-1-arrrow')
+
+    if ($('#attack-1-dropdown').hasClass('closed')) {
+        body.style.height = '200px'
+        body.classList.add('border-bottom')
+        attack1Input.classList.remove('closed')
+        attack1Input.classList.add('opened')
+        arrow.classList.remove('down')
+        arrow.classList.add('up')
+        setTimeout(function () {
+            body.style.overflow = 'visible'
+        }, 300)
+    } else {
+        body.style.height = '0'
+        body.style.overflow = 'hidden'
+        body.classList.remove('border-bottom')
+        attack1Input.classList.remove('opened')
+        attack1Input.classList.add('closed')
+        arrow.classList.remove('up')
+        arrow.classList.add('down')
+    }
+}
+
+const attack2Input = document.getElementById('attack-2-dropdown')
+
+attack2Input.onclick = () => attack2Dropdown()
+
+function attack2Dropdown() {
+    const body = document.getElementById('attack2')
+    const arrow = document.getElementById('attack-2-arrow')
+
+    if ($('#attack-2-dropdown').hasClass('closed')) {
+        body.style.height = '200px'
+        body.classList.add('border-bottom')
+        attack2Input.classList.remove('closed')
+        attack2Input.classList.add('opened')
+        arrow.classList.remove('down')
+        arrow.classList.add('up')
+        setTimeout(function () {
+            body.style.overflow = 'visible'
+        }, 300)
+    } else {
+        body.style.height = '0'
+        body.style.overflow = 'hidden'
+        body.classList.remove('border-bottom')
+        attack2Input.classList.remove('opened')
+        attack2Input.classList.add('closed')
+        arrow.classList.remove('up')
+        arrow.classList.add('down')
+    }
+}
+
 let currentType = '',
     pastType = '',
     weakness = '',
@@ -69,9 +157,13 @@ document.getElementById('update').onclick = () => updateContent()
 function updateContent() {
 
     document.getElementById('question-mark').style.display = 'none'
-
     document.querySelector('.card-name').innerHTML = $('input[type=text][name=name]').val()
     document.querySelector('.hp').innerHTML = $('input[name=hp]').val()
+    document.getElementById('evolves-from-name').innerHTML = $('input[name=evolves-from]').val()
+    document.querySelector('.pokedex-number').innerHTML = `NO. ${$('input[name=pokedex-number]').val()}`
+    document.querySelector('.category').innerHTML = `${$('input[name=category]').val()} Pokemon`
+    document.querySelector('.height').innerHTML = `HT: ${$('input[name=feet]').val()}'${$('input[name=inches]').val()}"`
+    document.querySelector('.weight').innerHTML = `WT: ${$('input[name=weight]').val()} lbs.`
 
     const stage = $('select[name=stage]').val()
 
@@ -88,8 +180,10 @@ function updateContent() {
 
     if (pastStage === 'basic') {
         document.querySelector('.small-img').style.display = 'none'
+        document.querySelector('.evolves-from').style.display = 'none'
     } else {
         document.querySelector('.small-img').style.display = 'block'
+        document.querySelector('.evolves-from').style.display = 'block'
     }
 
     if (currentType == 'dark') {
@@ -133,6 +227,7 @@ function updateContent() {
     }
 
     document.querySelector('.card-container').style.display = 'block'
+    document.querySelector('#card').classList.remove('card')
 }
 
 document.querySelectorAll('.select-type').forEach(type => {

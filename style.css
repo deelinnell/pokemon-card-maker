@@ -1,100 +1,71 @@
 * {
     margin: 0;
     padding: 0;
+    --darkblue: #192653;
+    --lightblue: #254a7c;
+    --yellow: #fdcb00;
 }
 
 body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: #8b9699;
-    color: #111;
+    background-image: linear-gradient(to bottom right, #8b9699, #8693a7);
+    color: #222;
 }
 
 .container {
     display: flex;
     flex-direction: row;
+    margin-top: 50px;
     justify-content: center;
-    align-items: center;
     height: 100vh;
 }
 
-/* * * INPUT STYLES * * */
-
-.input-container {
-    position: relative;
-    border: 15px solid #192653;
-    background-color: #254a7c;
-    background-image: radial-gradient(#254a7c, #6f7c94, #254a7c);
-    font-size: 16pt;
-    border-radius: 1rem;
-    padding: 5px;
-    box-shadow: 0 2px 5px black;
-}
-
-.input-container {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-.input-container label,
-.input-container p,
-.input-container h2 {
-    -webkit-text-stroke: 1px #192653;
-	-webkit-text-fill-color: #fdcb00;
-    color: #fdcb00;
-}
-
-.input-container h2 {
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.input-container li:hover {
-    cursor: pointer;
-}
-
-.input-container ul {
-    position: relative;
-    z-index: 900;
-}
-
 /* * * CARD STYLEs * * */
+
+.img-drop-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
 
 .img-drop {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 16px;
-    width: 400px;
-    height: 175px;
+    width: 380px;
+    height: 235px;
+    margin-bottom: 20px;
     border: 5px dotted #fdcb00;
+    border-radius: 15px;
     box-shadow: 0 0 50px #254a7c inset;
     color: #192653;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-bottom: 60px;
 }
 
 .img-drop-small {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin: auto;
+    text-align: center;
     border: 5px dotted #fdcb00;
+    border-radius: 40px 12px 55px 12px;
     box-shadow: 0 0 50px #254a7c inset;
     color: #192653;
-    width: 300px;
-    height: 140px;
+    width: 160px;
+    height: 160px;
+    margin-bottom: 10px;
 }
 
 .active {
     border-color: #ffcb05;
     background-color: #254a7c;
     outline: 5px solid #192653;
-    border-radius: 10px;
     color: #ffcb05;
 }
 
 .img-container {
     position: relative;
-    margin: 20px;
+    margin: 10px;
     width: 452px;
     height: 628px;
 }
@@ -109,12 +80,13 @@ body {
     width: 100%;
     height: 100%;
     box-shadow: 5px 5px 15px black;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .card {
     background-image: url(img/card_back.png);
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-color: #192653;
 }
 
 #question-mark {
@@ -156,7 +128,7 @@ body {
     justify-content: space-between;
     height: 14%;
     margin-left: 17%;
-    margin-right: 10%;
+    margin-right: 9.8%;
 }
 
 .card-name {
@@ -164,13 +136,13 @@ body {
 }
 
 .card-hp {
-    padding-top: 5px;
-    font-size: 9pt;
+    padding-top: 7px;
+    font-size: 7pt;
 }
 
 .hp {
     font-size: 19pt;
-    font-weight: bold;
+    font-family: sans-serif;
 }
 
 /* picture */
@@ -193,6 +165,16 @@ body {
     overflow: hidden;
 }
 
+.card-picture > p {
+    position: absolute;
+    top: 2px;
+    left: 46px;
+    font-style: italic;
+    font-size: 8pt;
+    color: #333;
+    text-shadow: 0 0 4px rgb(238, 238, 238);
+}
+
 .card-img {
     position: absolute;
     top: 28.7%; 
@@ -208,8 +190,22 @@ body {
     height: 100%;
 }
 
-.top-flavor-text {
+.stats-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     height: 6.5%;
+}
+
+.stats-text > p {
+    font-size: 7pt;
+    color: #222;
+    padding: 5px;
+    padding-bottom: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-shadow: 0 0 2px white;
 }
 
 /* * * CARD BOTTOM * * */
@@ -241,7 +237,6 @@ body {
 }
 
 .attack-main p {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 17pt;
     font-weight: bold;
 }
@@ -256,11 +251,13 @@ body {
 }
 
 .attack-name {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     position: absolute;
-    left: 118px;
+    left: 120px;
 }
 
 .attack-damage {
+    font-family: sans-serif;
     position: absolute;
     right: 0px;
 }
@@ -343,7 +340,100 @@ body {
     left: 75%;
 }
 
+/* * * INPUT STYLES * * */
+
+.input-container {
+    position: relative;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 15px solid #192653;
+    background-color: #254a7c;
+    background-image: linear-gradient(to bottom right, #567296, var(--lightblue));
+    font-size: 16pt;
+    border-radius: 1rem;
+    box-shadow: 0 2px 5px black;
+    margin: 10px;
+}
+
+.input-container label,
+.input-container p,
+.input-container h2 {
+    -webkit-text-stroke: 1px #192653;
+	-webkit-text-fill-color: #fdcb00;
+    color: #fdcb00;
+    margin: 4px;
+}
+
+.input-container h2 {
+    text-align: center;
+}
+
+.input-container li:hover {
+    cursor: pointer;
+}
+
+.input-container ul {
+    position: relative;
+    z-index: 900;
+}
+
 /* * * FORM * * */
+
+.arrow {
+    position: relative;
+    border: solid var(--yellow);
+    border-width: 0 3px 3px 0;
+    display: block;
+    padding: 3px;
+    height: 5px;
+    width: 5px;
+}
+
+.arrowbox {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to bottom, var(--darkblue),var(--lightblue));
+    border-top: 3px solid var(--darkblue);
+    border-bottom: 3px solid var(--darkblue);
+    border-radius: 10px 10px 10px 10px;
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+}
+
+.arrowbox:hover {
+    cursor: pointer;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+    top: 8px;
+    right: 3px;
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+    top: 8px;
+    left: 3px;
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+    top: 10px;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    top: 4px;
+}
+
+input,
+select {
+    font-size: 12pt;
+}
 
 label,
 input {
@@ -366,13 +456,34 @@ select {
 }
 
 
-/* * * TYPE * * */
+/* * * NAME INPUTS * * */
 
-#type-selector {
+.name-container {
+    margin: 10px;
+}
+
+.name-container > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#name {
+    width: 140px;
+}
+
+#evolves-from {
+    width: 140px;
+}
+
+.type-selector {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    width: fit-content;
 }
 
 #type-dropdown {
@@ -385,97 +496,157 @@ select {
     display: none;
 }
 
-.type-button {
-    width: 20px;
-    height: 20px;
-    border-right: 1px solid black;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    border: 1px solid black;
-    background: linear-gradient(to bottom, #192653, #254a7c);
-    color: #fdcb00;
-    font-size: 14pt;
-    text-align: center;
-}
-
-.type-button:hover {
-    cursor: pointer;
-}
-
 .current-type {
     display: block;
     position: relative;
-    width: 32px;
-    height: 32px;
-    outline: 1px solid black;
+    width: 36px;
+    height: 36px;
+    outline: 1px solid var(--darkblue);
     background-color: rgb(189, 189, 189);
     box-shadow: 0 0 10px #777 inset;
     margin: 5px 0 5px 0;
 }
 
-#type-selector p {
+.type-selector p {
     margin-right: 8px;
 }
 
-#type-selector ul {
-    width: 32px;
+.type-selector ul {
+    width: 36px;
     list-style-type: none;
-    outline: 1px solid black;
+    outline: 1px solid var(--darkblue);
     background-color: rgb(189, 189, 189);
+    box-shadow: 0 0 10px #777 inset;
 }
 
-#type-selector li {
+.type-selector li {
     position: relative;
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
 }
 
 .current-type img {
-    width: 25px;
-    height: 25px;
-    padding: 4px;
+    width: 30px;
+    height: 30px;
+    padding: 3px;
     position: absolute;
 }
 
-/* * * ATTACKS * * */
+/* * * STATS INPUT * * */
 
-.attack-cost-container {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
+.stats-input,
+.attack-input {
+    padding: 0;
+    margin: 0;
 }
 
-.attacks-selector,
-.weakness-selector,
-.resistance-selector {
+.input-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+    height: 50px;
+    background: linear-gradient(to bottom, #254a7c, #192653, #254a7c);
+    border-left: 1px solid var(--darkblue);
+    border-right: 1px solid var(--darkblue);
+    margin: 5px;
+}
+
+.input-header:hover {
+    cursor: pointer;
+}
+
+.closed {
+    border-top: 3px solid var(--darkblue);
+    border-bottom: 3px solid var(--darkblue);
+    border-radius: 10px 10px 10px 10px;
+}
+
+.opened {
+    border-top: 3px solid var(--darkblue);
+    border-bottom: 1px solid var(--darkblue);
+    border-radius: 10px 10px 2px 2px;
+}
+
+.border-bottom {
+    border-bottom: 3px solid var(--darkblue);
+    border-radius: 10px;
+}
+
+.input-body {
+    margin: 5px;
+}
+
+#stats-body {
+    height: 0;
+    transition: height 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#stats-body > div {
+    display: flex;
+    flex-direction: row;
+}
+
+#pokedex-number {
+    width: 55px;
+}
+
+.height-div,
+.weight-div {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.attacks-selector p {
-    margin-right: 8px;
+.height-div > input {
+    width: 35px;
 }
 
-.attacks-selector ul {
-    z-index: 900;
-    list-style-type: none;
-    outline: 1px solid black;
+.weight-div > input {
+    width: 70px;
 }
 
-.attacks-selector li,
-.weakness-selector li,
-.resistance-selector li {
-    width: 32px;
-    height: 32px;
-    background-color: rgb(189, 189, 189);
+#category {
+    width: 70px;
 }
 
-.attack-dropdown,
-.weakness-dropdown,
-.resistance-dropdown {
+/* * * ATTACKS * * */
+
+.attack-body {
+    height: 0;
+    transition: height 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#attack1,
+#attack2 {
+    overflow: hidden;
+}
+
+#attack1-name,
+#attack2-name {
+    width: 120px;
+}
+
+#attack-damage-1,
+#attack-damage-2 {
+    width: 40px;
+}
+
+.attack-cost-container {
     display: flex;
     flex-direction: row;
+    margin: 10px;
+    gap: 5px;
 }
 
 #attack-cost-list-1-1,
@@ -485,44 +656,40 @@ select {
 #attack-cost-list-2-1,
 #attack-cost-list-2-2,
 #attack-cost-list-2-3,
-#attack-cost-list-2-4 {
+#attack-cost-list-2-4,
+#resistance-list,
+#weakness-list {
     display: none;
-}
-
-.cost-1-1,
-.cost-1-2,
-.cost-1-3,
-.cost-1-4 {
-    background-color: white;
-    z-index: 900;
 }
 
 /*** FOOTER FORM ***/
 
-#resistance-list,
-#weakness-list {
-    list-style-type: none;
-    outline: 1px solid black;
-    display: none;
+.footer-input {
+    margin: 10px;
 }
 
-.weakness-selector > p,
-.resistance-selector > p {
-    margin: 5px;
+.footer-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .buttons-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 16px;
+    margin: 10px;
 }
 
 #update {
     display: inline-block;
+    height: 50px;
     width: 200px;
-    height: 40px;
-    border-radius: 5px;
+    border: none;
+    border-top: 3px solid var(--darkblue);
+    border-bottom: 3px solid var(--darkblue);
+    border-radius: 10px 10px 10px 10px;
     font-size: 20pt;
     font-weight: bold;
     background: linear-gradient(to bottom, #192653, #254a7c);
@@ -539,12 +706,15 @@ select {
     display: inline-block;
     height: 40px;
     width: 40px;
+    border: none;
+    border-top: 3px solid var(--darkblue);
+    border-bottom: 3px solid var(--darkblue);
+    border-radius: 10px 10px 10px 10px;
     font-size: 22pt;
     margin-left: 5px;
     font-weight: bold;
     color: #fdcb00;
     background: linear-gradient(to bottom, #192653, #254a7c);
-    border-radius: 5px;
 }
 
 /* * * TYPES * * */
