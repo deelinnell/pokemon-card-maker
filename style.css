@@ -217,17 +217,39 @@ body {
     justify-content: space-between;
 }
 
-/* attacks */
+/* attacks & ability */
+
+.ability-container img {
+    position: relative;
+    height: 28px;
+    right: 3px;
+}
+
+.ability-header {
+    display: flex;
+    flex-direction: row;
+}
+
+.ability-header > p {
+    color: #8f000af3;
+    font-size: 17pt;
+    padding-left: 2px;
+}
+
+.ability-container > p {
+    position: relative;
+    font-family: sans-serif, Arial;
+    font-weight: bold;
+    font-size: 9pt;
+    padding: 0 5px 3px 5px;
+}
+
 .attack-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     margin: 0 13px 0 13px;
     height: 75%;
-}
-
-.attack {
-    margin: 10px 0 10px 0;
 }
 
 .attack-main {
@@ -264,9 +286,9 @@ body {
 
 .attack-text {
     font-family: sans-serif, Arial;
-    font-size: 8pt;
     font-weight: bold;
-    padding: 3px;
+    font-size: 9pt;
+    padding: 3px 5px 5px 6px;
 }
 
 .attack-cost {
@@ -501,7 +523,8 @@ select {
     position: relative;
     width: 36px;
     height: 36px;
-    outline: 1px solid var(--darkblue);
+    outline: 2px solid var(--darkblue);
+    border-radius: 6px;
     background-color: rgb(189, 189, 189);
     box-shadow: 0 0 10px #777 inset;
     margin: 5px 0 5px 0;
@@ -512,10 +535,11 @@ select {
 }
 
 .type-selector ul {
-    width: 36px;
+    display: flex;
     list-style-type: none;
-    outline: 1px solid var(--darkblue);
     background-color: rgb(189, 189, 189);
+    border-radius: 6px;
+    outline: 2px solid var(--darkblue);
     box-shadow: 0 0 10px #777 inset;
 }
 
@@ -617,7 +641,7 @@ select {
     width: 70px;
 }
 
-/* * * ATTACKS * * */
+/* * * ATTACKS INPUT * * */
 
 .attack-body {
     height: 0;
@@ -634,20 +658,28 @@ select {
 
 #attack1-name,
 #attack2-name {
-    width: 120px;
+    width: 190px;
+    margin: 10px;
+}
+
+.damage-container {
+    position: relative;
+    margin-top: 4px;
 }
 
 #attack-damage-1,
 #attack-damage-2 {
-    width: 40px;
+    width: 60px;
 }
 
 .attack-cost-container {
     display: flex;
     flex-direction: row;
     margin: 10px;
+    padding-top: 2px;
     gap: 5px;
 }
+
 
 #attack-cost-list-1-1,
 #attack-cost-list-1-2,
@@ -660,6 +692,17 @@ select {
 #resistance-list,
 #weakness-list {
     display: none;
+}
+
+/* * * ABILITY INPUT * * */
+
+#ability-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s;
 }
 
 /*** FOOTER FORM ***/

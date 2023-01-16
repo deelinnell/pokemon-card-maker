@@ -61,13 +61,38 @@ smallImgDrop.addEventListener('drop', event => {
 
 // INPUT DROPDOWN
 
+const abilityInput = document.getElementById('ability-dropdown')
+
+abilityInput.onclick = () => abilityDropdown()
+
+function abilityDropdown() {
+    const body = document.getElementById('ability-body')
+    const arrow = document.getElementById('ability-arrow')
+
+    if ($('#ability-dropdown').hasClass('closed')) {
+        body.style.height = '140px'
+        body.classList.add('border-bottom')
+        abilityInput.classList.remove('closed')
+        abilityInput.classList.add('opened')
+        arrow.classList.remove('down')
+        arrow.classList.add('up')
+    } else {
+        body.style.height = '0'
+        body.classList.remove('border-bottom')
+        abilityInput.classList.remove('opened')
+        abilityInput.classList.add('closed')
+        arrow.classList.remove('up')
+        arrow.classList.add('down')
+    }
+}
+
 const statsInput = document.getElementById('stats-dropdown')
 
 statsInput.onclick = () => statsDropdown()
 
 function statsDropdown() {
     const body = document.getElementById('stats-body')
-    const arrow = document.getElementById('stats-arrrow')
+    const arrow = document.getElementById('stats-arrow')
 
     if ($('#stats-dropdown').hasClass('closed')) {
         body.style.height = '100px'
@@ -92,10 +117,10 @@ attack1Input.onclick = () => attack1Dropdown()
 
 function attack1Dropdown() {
     const body = document.getElementById('attack1')
-    const arrow = document.getElementById('attack-1-arrrow')
+    const arrow = document.getElementById('attack-1-arrow')
 
     if ($('#attack-1-dropdown').hasClass('closed')) {
-        body.style.height = '200px'
+        body.style.height = '260px'
         body.classList.add('border-bottom')
         attack1Input.classList.remove('closed')
         attack1Input.classList.add('opened')
@@ -124,7 +149,7 @@ function attack2Dropdown() {
     const arrow = document.getElementById('attack-2-arrow')
 
     if ($('#attack-2-dropdown').hasClass('closed')) {
-        body.style.height = '200px'
+        body.style.height = '260px'
         body.classList.add('border-bottom')
         attack2Input.classList.remove('closed')
         attack2Input.classList.add('opened')
@@ -144,12 +169,13 @@ function attack2Dropdown() {
     }
 }
 
+// SUBMIT FUNCTION *******
+
 let currentType = '',
     pastType = '',
     weakness = '',
     resistance = '',
     pastStage = ''
-
 
 const submit = document.getElementById('submit')
 document.getElementById('update').onclick = () => updateContent()
@@ -194,8 +220,9 @@ function updateContent() {
 
     const attack1 = createAttack1()
     const attack2 = createAttack2()
+    const ability = createAbility()
 
-    document.querySelector('.attack-container').replaceChildren(attack1, attack2)
+    document.querySelector('.attack-container').replaceChildren(ability, attack1, attack2)
 
     if (weakness !== '') {
         const weakImg = document.createElement('img')
@@ -235,7 +262,7 @@ document.querySelectorAll('.select-type').forEach(type => {
 })
 
 function typeDropdown() {
-    document.getElementById('type-list').style.display = 'block'
+    document.getElementById('type-list').style.display = 'grid'
 }
 
 document.getElementById('type-button').onclick = () => typeDropdown()
@@ -255,7 +282,31 @@ function updateType(value) {
     currentType = value
 }
 
-// ATTACKS
+// ABILITY FUNCTIONS
+
+function createAbility() {
+    const div = document.createElement('div')
+    div.classList.add('ability-container')
+    const header = document.createElement('div')
+    header.classList.add('ability-header')
+    const img = document.createElement('img')
+    const title = document.createElement('p')
+    const text = document.createElement('p')
+
+    img.src = 'img/ability.png'
+    title.innerHTML = $('input[name=ability-name]').val()
+    text.innerHTML = $('textarea[name=ability-text]').val()
+
+    header.appendChild(img)
+    header.appendChild(title)
+    div.appendChild(header)
+    div.appendChild(text)
+
+    return div
+}
+
+
+// ATTACKS FUNCTIONS *****************
 
 let attack1cost1 = '',
     attack1cost2 = '',
@@ -596,6 +647,8 @@ function createAttack2() {
 
     return container
 }
+
+// WEAKNESS & RESISTANCE DROPDOWN
 
 document.querySelectorAll('.weakness-type').forEach(type => {
     type.onclick = () => updateWeakness(type.getAttribute("value"))

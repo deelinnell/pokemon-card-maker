@@ -39,7 +39,7 @@
                                     </ul>
                                 </div>
                                 <div class="arrowbox" id="type-button">
-                                    <i id="attack-2-arrrow" class="arrow down"></i>
+                                    <i id="type-arrow" class="arrow down"></i>
                                 </div>
                             </div>
                         </div>
@@ -61,7 +61,7 @@
                     <div id="stats-dropdown" class="input-header closed">
                         <h2>Stats:</h2>
                         <div class="arrowbox">
-                            <i id="stats-arrrow" class="arrow down"></i>
+                            <i id="stats-arrow" class="arrow down"></i>
                         </div>
                     </div>
                     <div id="stats-body" class="input-body">
@@ -87,20 +87,41 @@
                         </div>
                     </div>
                 </div>
+<!-------------- ABILITY FORMS --------------->
+                <div class="ability-input">
+                    <div id="ability-dropdown" class="input-header closed">
+                        <h2>Ability:</h2>
+                        <div class="arrowbox">
+                            <i id="ability-arrow" class="arrow down"></i>
+                        </div>
+                    </div>
+                    <div id="ability-body" class="input-body">
+                        <div>
+                            <label for="ability-name">Name:</label>
+                            <input type="text" id="ability-name" name="ability-name"><br>
+                        </div>
+                        <div>
+                            <p>Ability Text:</p>
+                            <textarea id="ability-text" name="ability-text" rows="4" cols="40"></textarea><br>
+                        </div>
+                    </div>
+                </div>
 <!-------------- ATTACK 1 FORM --------------->
                 <div class="attack-input">
                     <div id="attack-1-dropdown" class="input-header closed">
                         <h2>Attack 1:</h2>
                         <div class="arrowbox">
-                            <i id="attack-1-arrrow" class="arrow down"></i>
+                            <i id="attack-1-arrow" class="arrow down"></i>
                         </div>
                     </div>
                     <div id="attack1" class="attack-body input-body">
                         <div>
                             <label for="attack1-name">Name:</label>
                             <input type="text" id="attack1-name" name="attack1-name" maxlength="20">
-                            <label for="attack-damage-1">Damage:</label>
-                            <input type="number" id="attack-damage-1" name="attack-damage-1"  min="10" max="500" step="10">
+                            <div class="damage-container">
+                                <label for="attack-damage-1">Damage:</label>
+                                <input type="number" id="attack-damage-1" name="attack-damage-1"  min="10" max="500" step="10">
+                            </div>
                         </div>
                         <div class="attack-cost-container">
                             <div class="attacks-selector type-selector">
@@ -123,7 +144,7 @@
                                     </div>
                                 </div>
                                 <div class="arrowbox" id="attack-1-cost-1-button">
-                                    <i id="attack-2-arrrow" class="arrow down"></i>
+                                    <i id="attack-1-1-arrow" class="arrow down"></i>
                                 </div>
                             </div>
                             <div class="attacks-selector type-selector">
@@ -146,7 +167,7 @@
                                     </div>
                                 </div>
                                 <div class="arrowbox" id="attack-1-cost-2-button">
-                                    <i id="attack-2-arrrow" class="arrow down"></i>
+                                    <i id="attack-1-2-arrow" class="arrow down"></i>
                                 </div>
                             </div>
                             <div class="attacks-selector type-selector">
@@ -169,7 +190,7 @@
                                     </div>
                                 </div>
                                 <div class="arrowbox" id="attack-1-cost-3-button">
-                                    <i id="attack-2-arrrow" class="arrow down"></i>
+                                    <i id="attack-1-3-arrow" class="arrow down"></i>
                                 </div>
                             </div>
                             <div class="attacks-selector  type-selector">
@@ -192,13 +213,13 @@
                                     </div>
                                 </div>
                                 <div class="arrowbox" id="attack-1-cost-4-button">
-                                    <i id="attack-2-arrrow" class="arrow down"></i>
+                                    <i id="attack-1-4-arrow" class="arrow down"></i>
                                 </div>
                             </div>
                         </div>
                         <div>
                             <p>Attack Text:</p>
-                            <textarea id="attack-text-1" name="attack-text-1" rows="4" cols="30"></textarea><br>
+                            <textarea id="attack-text-1" name="attack-text-1" rows="4" cols="40"></textarea><br>
                         </div>
                     </div>
                 </div>
@@ -214,8 +235,10 @@
                         <div>
                             <label for="attack1-name">Name:</label>
                             <input type="text" id="attack2-name" name="attack2-name" maxlength="20">
-                            <label for="attack-damage-2">Damage:</label>
-                            <input type="number" id="attack-damage-2" name="attack-damage-2" min="10" max="500"  step="10"><br>
+                            <div class="damage-container">
+                                <label for="attack-damage-2">Damage:</label>
+                                <input type="number" id="attack-damage-2" name="attack-damage-2" min="10" max="500"  step="10">
+                            </div>
                         </div>
                         <div class="attack-cost-container">
                             <div class="attacks-selector type-selector">
@@ -238,7 +261,7 @@
                                     </div>
                                 </div>
                                 <div class="arrowbox" id="attack-2-cost-1-button">
-                                    <i id="attack-2-arrrow" class="arrow down"></i>
+                                    <i id="attack-2-1-arrow" class="arrow down"></i>
                                 </div>
                             </div>
                             <div class="attacks-selector type-selector">
@@ -261,7 +284,7 @@
                                     </div>
                                 </div>
                                 <div class="arrowbox" id="attack-2-cost-2-button">
-                                    <i id="attack-2-arrrow" class="arrow down"></i>
+                                    <i id="attack-2-2-arrow" class="arrow down"></i>
                                 </div>
                             </div>
                             <div class="attacks-selector type-selector">
@@ -284,7 +307,7 @@
                                     </div>
                                 </div>
                                 <div class="arrowbox" id="attack-2-cost-3-button">
-                                    <i id="attack-2-arrrow" class="arrow down"></i>
+                                    <i id="attack-2-3-arrow" class="arrow down"></i>
                                 </div>
                             </div>
                             <div class="attacks-selector type-selector">
@@ -307,13 +330,13 @@
                                     </div>
                                 </div>
                                 <div class="arrowbox" id="attack-2-cost-4-button">
-                                    <i id="attack-2-arrrow" class="arrow down"></i>
+                                    <i id="attack-2-4-arrow" class="arrow down"></i>
                                 </div>
                             </div>
                         </div>
                         <div>
                             <p>Attack Text:</p>
-                            <textarea id="attack-text-2" name="attack-text-2" rows="4" cols="30"></textarea><br>
+                            <textarea id="attack-text-2" name="attack-text-2" rows="4" cols="40"></textarea><br>
                         </div>
                     </div>
                 </div>
@@ -341,7 +364,7 @@
                                 </div>
                             </div>
                             <div class="arrowbox" id="weakness-button">
-                                <i id="attack-2-arrrow" class="arrow down"></i>
+                                <i id="weakness-arrow" class="arrow down"></i>
                             </div>
                         </div>
                         <label for="retreat">Retreat:</label>
@@ -374,7 +397,7 @@
                             </div>
                         </div>
                         <div class="arrowbox" id="resistance-button">
-                            <i id="attack-2-arrrow" class="arrow down"></i>
+                            <i id="resistance-arrow" class="arrow down"></i>
                         </div>
                     </div>
                 </div>
