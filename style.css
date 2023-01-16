@@ -89,22 +89,6 @@ body {
     background-color: #192653;
 }
 
-#question-mark {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-}
-
-#question-mark > p {
-    -webkit-text-stroke: 4px #254a7c;
-	-webkit-text-fill-color: #ffcb05;
-    font-size: 200pt;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-shadow: 0 0 10px #192653;
-}
-
 .card-container {
     width: 93%;
     height: 94%;
@@ -530,6 +514,12 @@ select {
     margin: 5px 0 5px 0;
 }
 
+.dropdown-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .type-selector p {
     margin-right: 8px;
 }
@@ -638,7 +628,7 @@ select {
 }
 
 #category {
-    width: 70px;
+    width: 90px;
 }
 
 /* * * ATTACKS INPUT * * */
@@ -737,12 +727,17 @@ select {
     font-weight: bold;
     background: linear-gradient(to bottom, #192653, #254a7c);
     color: #fdcb00;
+    transition: 0.3s;
 }
 
 #update:hover,
 #reload:hover {
     cursor: pointer;
     color: white;
+    background: linear-gradient(to bottom, #254a7c, #6885ac);
+    transform: translateY(-3px);
+    border-top: 3px solid var(--lightblue);
+    border-bottom: 3px solid var(--lightblue);
 }
 
 #reload {
@@ -756,8 +751,9 @@ select {
     font-size: 22pt;
     margin-left: 5px;
     font-weight: bold;
-    color: #fdcb00;
     background: linear-gradient(to bottom, #192653, #254a7c);
+    color: #fdcb00;
+    transition: 0.3s;
 }
 
 /* * * TYPES * * */
