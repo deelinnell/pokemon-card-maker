@@ -220,7 +220,10 @@ function updateContent() {
 
     const attack1 = createAttack1()
     const attack2 = createAttack2()
-    const ability = createAbility()
+    let ability = ''
+    if ($('input[name=ability-name]').val()) {
+        ability = createAbility()
+    }
 
     document.querySelector('.attack-container').replaceChildren(ability, attack1, attack2)
 
@@ -285,26 +288,31 @@ function updateType(value) {
 // ABILITY FUNCTIONS
 
 function createAbility() {
-    const div = document.createElement('div')
-    div.classList.add('ability-container')
-    const header = document.createElement('div')
-    header.classList.add('ability-header')
-    const img = document.createElement('img')
-    const title = document.createElement('p')
-    const text = document.createElement('p')
 
-    img.src = 'img/ability.png'
-    title.innerHTML = $('input[name=ability-name]').val()
-    text.innerHTML = $('textarea[name=ability-text]').val()
+    const name = $('input[name=ability-name]').val()
 
-    header.appendChild(img)
-    header.appendChild(title)
-    div.appendChild(header)
-    div.appendChild(text)
+    if (name) {
 
-    return div
+        const div = document.createElement('div')
+        div.classList.add('ability-container')
+        const header = document.createElement('div')
+        header.classList.add('ability-header')
+        const img = document.createElement('img')
+        const title = document.createElement('p')
+        const text = document.createElement('p')
+
+        img.src = 'img/ability.png'
+        title.innerHTML = name
+        text.innerHTML = $('textarea[name=ability-text]').val()
+
+        header.appendChild(img)
+        header.appendChild(title)
+        div.appendChild(header)
+        div.appendChild(text)
+
+        return div
+    }
 }
-
 
 // ATTACKS FUNCTIONS *****************
 
