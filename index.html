@@ -12,50 +12,53 @@
     <title>Custom Card Maker</title>
 </head>
 <body>
+    <div id="background"></div>
     <div class="container">
 <!-------------- NAME / TYPE FORM --------------->
-        <div>
             <div class="input-container">
-                <div class="name-container">
+                <img id="logo" src="img/logo.png" alt="">
+                <div id="type-selector">
+                    <ul id="type-list">
+                        <li value="grass" class="select-type"><img src="img/grass.png" alt="grass"></li>
+                        <li value="water" class="select-type"><img src="img/water.png" alt="water"></li>
+                        <li value="fire" class="select-type"><img src="img/fire.png" alt="fire"></li>
+                        <li value="normal" class="select-type"><img src="img/normal.png" alt="normal"></li>
+                        <li value="electric" class="select-type"><img src="img/electric.png" alt="electric"></li>
+                        <li value="psychic" class="select-type"><img src="img/psychic.png" alt="psychic"></li>
+                        <li value="fighting" class="select-type"><img src="img/fighting.png" alt="fighting"></li>
+                        <li value="dark" class="select-type"><img src="img/dark.png" alt="dark"></li>
+                        <li value="metal" class="select-type"><img src="img/metal.png" alt="metal"></li>
+                    </ul>
+                </div>
+                <div id="name-container">
                     <div>
                         <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" maxlength="20"><br>
-                        <div id="type-selector" class="type-selector">
-                            <p>Type:</p>
-                            <div id="type-dropdown" class="dropdown-container">
-                                <div class="current-type">
-                                    <div id="current-type-img"></div>
-                                    <ul id="type-list" class="dropdown">
-                                        <li value="" class="select-type"></li>
-                                        <li value="grass" class="select-type"><img src="img/grass.png" alt="grass"></li>
-                                        <li value="water" class="select-type"><img src="img/water.png" alt="water"></li>
-                                        <li value="fire" class="select-type"><img src="img/fire.png" alt="fire"></li>
-                                        <li value="normal" class="select-type"><img src="img/normal.png" alt="normal"></li>
-                                        <li value="electric" class="select-type"><img src="img/electric.png" alt="electric"></li>
-                                        <li value="psychic" class="select-type"><img src="img/psychic.png" alt="psychic"></li>
-                                        <li value="fighting" class="select-type"><img src="img/fighting.png" alt="fighting"></li>
-                                        <li value="dark" class="select-type"><img src="img/dark.png" alt="dark"></li>
-                                        <li value="metal" class="select-type"><img src="img/metal.png" alt="metal"></li>
-                                    </ul>
-                                </div>
-                                <div class="arrowbox" id="type-button">
-                                    <i id="type-arrow" class="arrow down"></i>
-                                </div>
-                            </div>
+                        <input type="text" id="name" name="name" maxlength="20">
+                        <label for="hp">HP:</label>
+                        <input type="number" id="hp" name="hp" min="10" max="340" step="10">
+                    </div>
+                </div>
+                <div class="stage-input">
+                    <div id="stage-dropdown" class="input-header closed">
+                        <h2>Stage:</h2>
+                        <div class="arrowbox">
+                            <i id="stage-arrow" class="arrow down"></i>
                         </div>
                     </div>
-                    <div>
-                        <label for="hp">HP:</label>
-                        <input type="number" id="hp" name="hp" min="10" max="340" step="10"><br>
-                        <label for="stage">Stage:</label>
-                        <select id="stage" name="stage">
-                            <option value="basic">Basic</option>
-                            <option value="stage-1">Stage 1</option>
-                            <option value="stage-2">Stage 2</option>
-                        </select>
+                    <div id="stage-body" class="input-body">
+                        <div>
+                            <label for="stage">Stage:</label>
+                            <select id="stage" name="stage">
+                                <option value="basic">Basic</option>
+                                <option value="stage-1">Stage 1</option>
+                                <option value="stage-2">Stage 2</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="evolves-from">Evolves from:</label>
+                            <input type="text" id="evolves-from" name="evolves-from" maxlength="20">
+                        </div>
                     </div>
-                    <label for="evolves-from">Evolves from:</label>
-                    <input type="text" id="evolves-from" name="evolves-from" maxlength="20">
                 </div>
                 <div class="stats-input">
                     <div id="stats-dropdown" class="input-header closed">
@@ -367,49 +370,48 @@
                                 </div>                                
                             </div>
                         </div>
-                        <label for="retreat">Retreat:</label>
-                        <select id="retreat" name="retreat">
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                    </div>
-                    <div class="resistance-selector type-selector">
-                        <p>Resistance:</p>
-                        <div id="resistance-dropdown" class="dropdown-container resistance-dropdown">
-                            <div class="current-type type-closed">
-                                <div id="current-resistance">
+                        <div class="resistance-selector type-selector">
+                            <p>Resistance:</p>
+                            <div id="resistance-dropdown" class="dropdown-container resistance-dropdown">
+                                <div class="current-type type-closed">
+                                    <div id="current-resistance">
+                                    </div>
+                                    <ul id="resistance-list" class="dropdown">
+                                        <li value="" class="resistance-type"></li>
+                                        <li value="grass" class="resistance-type"><img src="img/grass.png" alt="grass"></li>
+                                        <li value="water" class="resistance-type"><img src="img/water.png" alt="water"></li>
+                                        <li value="fire" class="resistance-type"><img src="img/fire.png" alt="fire"></li>
+                                        <li value="normal" class="resistance-type"><img src="img/normal.png" alt="normal"></li>
+                                        <li value="electric" class="resistance-type"><img src="img/electric.png" alt="electric"></li>
+                                        <li value="psychic" class="resistance-type"><img src="img/psychic.png" alt="psychic"></li>
+                                        <li value="fighting" class="resistance-type"><img src="img/fighting.png" alt="fighting"></li>
+                                        <li value="dark" class="resistance-type"><img src="img/dark.png" alt="dark"></li>
+                                        <li value="metal" class="resistance-type"><img src="img/metal.png" alt="metal"></li>
+                                    </ul>
                                 </div>
-                                <ul id="resistance-list" class="dropdown">
-                                    <li value="" class="resistance-type"></li>
-                                    <li value="grass" class="resistance-type"><img src="img/grass.png" alt="grass"></li>
-                                    <li value="water" class="resistance-type"><img src="img/water.png" alt="water"></li>
-                                    <li value="fire" class="resistance-type"><img src="img/fire.png" alt="fire"></li>
-                                    <li value="normal" class="resistance-type"><img src="img/normal.png" alt="normal"></li>
-                                    <li value="electric" class="resistance-type"><img src="img/electric.png" alt="electric"></li>
-                                    <li value="psychic" class="resistance-type"><img src="img/psychic.png" alt="psychic"></li>
-                                    <li value="fighting" class="resistance-type"><img src="img/fighting.png" alt="fighting"></li>
-                                    <li value="dark" class="resistance-type"><img src="img/dark.png" alt="dark"></li>
-                                    <li value="metal" class="resistance-type"><img src="img/metal.png" alt="metal"></li>
-                                </ul>
+                                <div class="arrowbox" id="resistance-button">
+                                    <i id="resistance-arrow" class="arrow down"></i>
+                                </div>                            
                             </div>
-                            <div class="arrowbox" id="resistance-button">
-                                <i id="resistance-arrow" class="arrow down"></i>
-                            </div>                            
                         </div>
+                        <div>
+                            <label for="retreat">Retreat:</label>
+                            <select id="retreat" name="retreat">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select> 
+                       </div>    
                     </div>
+                    <button id="reload" onclick="location.reload()"><p>↻</p></button>
                 </div>
 <!-------------- SUBMIT --------------->
-                <div class="buttons-container">
-                    <button id="update">Submit</button>
-                    <button id="reload" onclick="location.reload()">↻</button>
-                </div>
             </div>
-        </div>
+        
 <!-------------- CARD MAIN --------------->
-        <div>
+
             <div class="img-container">
                 <div class="card-img"></div>
                 <div class="card" id="card">
@@ -417,11 +419,14 @@
                         <div class="card-top">
                             <div class="card-header">
                                 <h1 class="card-name"></h1>
-                                <h2 class="card-hp">HP<span class="hp"></span></h2>
+                                <div class="hp-container">
+                                    <h2 class="card-hp"></h2>
+                                    <h1 class="hp"></h1>
+                                </div>              
                             </div>
                             <div class="card-picture">
                                 <div class="small-img"></div>
-                                <p class="evolves-from">Evolves from <span id="evolves-from-name"></span></p>
+                                <p class="evolves-from"><span id="evolves-from-name"></span></p>
                             </div>
                             <div class="stats-text">
                                 <p class="pokedex-number"></p>
@@ -449,7 +454,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+
         <div class="img-drop-container">
             <div class="img-drop">
                 Drop image here.
@@ -458,6 +463,7 @@
                 Drop pre-evolution image here.
             </div>
         </div>
+        <img id="pokeball" src="img/pokeball.png" alt="">
     </div>
 </body>
 </html>

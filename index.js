@@ -62,23 +62,46 @@ smallImgDrop.addEventListener('drop', event => {
 
 // ******* SUBMIT FUNCTION *******
 
-let currentType = '',
+let currentType = 'water',
     pastType = '',
     weakness = '',
     resistance = '',
     pastStage = ''
 
-const submit = document.getElementById('submit')
-document.getElementById('update').onclick = () => updateContent()
-
 function updateContent() {
     document.querySelector('.card-name').innerHTML = $('input[type=text][name=name]').val()
-    document.querySelector('.hp').innerHTML = $('input[name=hp]').val()
-    document.getElementById('evolves-from-name').innerHTML = $('input[name=evolves-from]').val()
-    document.querySelector('.pokedex-number').innerHTML = `NO. ${$('input[name=pokedex-number]').val()}`
-    document.querySelector('.category').innerHTML = `${$('input[name=category]').val()} Pokemon`
-    document.querySelector('.height').innerHTML = `HT: ${$('input[name=feet]').val()}'${$('input[name=inches]').val()}"`
-    document.querySelector('.weight').innerHTML = `WT: ${$('input[name=weight]').val()} lbs.`
+
+    const hp = $('input[name=hp]').val()
+    if (hp !== '') {
+        document.querySelector('.hp').innerHTML = $('input[name=hp]').val()
+        document.querySelector('.card-hp').innerHTML = 'HP'
+    }
+
+    const preEvolution = $('input[name=evolves-from]').val()
+    if (preEvolution !== '') {
+        document.getElementById('evolves-from-name').innerHTML = 'Evolves from ' + preEvolution
+    }
+
+    const pokedex = $('input[name=pokedex-number]').val()
+    if (pokedex !== '') {
+        document.querySelector('.pokedex-number').innerHTML = 'NO. ' + pokedex
+    }
+
+    const category = $('input[name=category]').val()
+    if (category !== '') {
+        document.querySelector('.category').innerHTML = category + ' Pokemon'
+    }
+
+    const heightInches = $('input[name=inches]').val()
+    const heightFeet = $('input[name=feet]').val()
+    if (heightInches !== '' || heightFeet !== '') {
+        document.querySelector('.height').innerHTML = `HT: ${heightFeet}'${heightInches}"`
+    }
+
+    const weight = $('input[name=weight]').val()
+    if (weight !== '') {
+        document.querySelector('.weight').innerHTML = `WT: ${weight} lbs.`
+    }
 
     const stage = $('select[name=stage]').val()
 
@@ -142,9 +165,38 @@ function updateContent() {
     }
     document.querySelector('.card-container').style.display = 'block'
     document.querySelector('#card').classList.remove('card')
+
+    setTimeout(() => {
+        updateContent()
+    }, "500")
 }
 
 // ***************** INPUT MENU BARS *****************
+
+// STAGE BAR
+const stageInput = document.getElementById('stage-dropdown')
+stageInput.onclick = () => stageDropdown()
+
+function stageDropdown() {
+    const body = document.getElementById('stage-body')
+    const arrow = document.getElementById('stage-arrow')
+
+    if ($('#stage-dropdown').hasClass('closed')) {
+        body.style.height = '85px'
+        body.classList.add('border-bottom')
+        stageInput.classList.remove('closed')
+        stageInput.classList.add('opened')
+        arrow.classList.remove('down')
+        arrow.classList.add('up')
+    } else {
+        body.style.height = '0'
+        body.classList.remove('border-bottom')
+        stageInput.classList.remove('opened')
+        stageInput.classList.add('closed')
+        arrow.classList.remove('up')
+        arrow.classList.add('down')
+    }
+}
 
 // STATS BAR
 const statsInput = document.getElementById('stats-dropdown')
@@ -205,7 +257,7 @@ function attack1Dropdown() {
     const arrow = document.getElementById('attack-1-arrow')
 
     if ($('#attack-1-dropdown').hasClass('closed')) {
-        body.style.height = '260px'
+        body.style.height = '255px'
         body.classList.add('border-bottom')
         attack1Input.classList.remove('closed')
         attack1Input.classList.add('opened')
@@ -234,7 +286,7 @@ function attack2Dropdown() {
     const arrow = document.getElementById('attack-2-arrow')
 
     if ($('#attack-2-dropdown').hasClass('closed')) {
-        body.style.height = '260px'
+        body.style.height = '255px'
         body.classList.add('border-bottom')
         attack2Input.classList.remove('closed')
         attack2Input.classList.add('opened')
@@ -255,6 +307,7 @@ function attack2Dropdown() {
 }
 
 // ******** TYPE DROPDOWN LISTS ********
+
 window.addEventListener('click', function (e) {
     const dropdown = document.querySelectorAll('.dropdown')
     if (!$(e.target).parents().hasClass('dropdown-container')) {
@@ -298,17 +351,14 @@ function dropdownUpdate(type, ul, value) {
 const typeList = document.getElementById('type-list')
 const typeImg = document.getElementById('current-type-img')
 
-document.getElementById('type-button').onclick = () => dropdown(typeList)
-
-function updateType(value) {
-    dropdownUpdate(typeImg, typeList, value)
-    pastType = currentType
-    currentType = value
-}
-
 document.querySelectorAll('.select-type').forEach(type => {
     type.onclick = () => updateType(type.getAttribute("value"))
 })
+
+function updateType(value) {
+    pastType = currentType
+    currentType = value
+}
 
 // ABILITY FUNCTION ****
 function createAbility() {
@@ -618,3 +668,7 @@ function updateResistance(value) {
 document.querySelectorAll('.resistance-type').forEach(type => {
     type.onclick = () => updateResistance(type.getAttribute("value"))
 })
+
+
+
+updateContent()
