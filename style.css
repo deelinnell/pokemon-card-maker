@@ -17,7 +17,7 @@ body {
 }
 
 #background {
-    background-image: url('../img/background.webp');
+    background-image: url('../img/background.png');
     background-position: top;
     background-size: contain cover;
     position: absolute;
