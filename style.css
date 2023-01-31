@@ -55,19 +55,20 @@ body {
     width: 380px;
     height: 235px;
     margin-bottom: 20px;
-    border: 5px dotted var(--white);
+    outline: 5px dotted var(--white);
     border-radius: 15px;
     box-shadow: 0 0 50px var(--offwhite) inset;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: white;
     text-shadow: 1px 0 1px #177edf, 0 1px 1px #177edf;
+    transition: 0.3s;
 }
 
 .img-drop-small {
     display: flex;
     align-items: center;
     text-align: center;
-    border: 5px dotted var(--white);
+    outline: 5px dotted var(--white);
     border-radius: 40px 12px 55px 12px;
     box-shadow: 0 0 50px var(--offwhite) inset;
     width: 160px;
@@ -75,13 +76,14 @@ body {
     margin-bottom: 10px;
     color: white;
     text-shadow: 1px 0 1px #177edf, 0 1px 1px #177edf;
+    transition: 0.3s;
 }
 
 .active {
-    border: 5px dotted var(--yellow);
-    box-shadow: none;
+    outline: 8px dotted var(--yellow);
     color: var(--yellow);
-    text-shadow: 1px 0 1px #000, 0 1px 1px #000;
+    box-shadow: 0 0 50px var(--darkblue) inset;
+    text-shadow: 1px 0 1px #ad900f, 0 1px 1px #ad900f;
 }
 
 .img-container {
@@ -239,7 +241,7 @@ body {
 }
 
 .ability-header > p {
-    color: #8f000af3;
+    color: #af0009;
     font-size: 17pt;
     padding-left: 2px;
 }
@@ -876,7 +878,7 @@ select {
 /* * * TYPES * * */
 
 .card-dark-basic {
-    background-image: url(img/Basic/SS_Basic_Dark.png)
+    background-image: url('img/Basic/SS_Basic_Dark.png')
 }
 .card-dark-stage-1 {
     background-image: url('img/Stage 1/SS_Stage1_Dark.png')
@@ -886,7 +888,7 @@ select {
 }
 
 .card-electric-basic {
-    background-image: url(img/Basic/SS_Basic_Lightning.png)
+    background-image: url('img/Basic/SS_Basic_Lightning.png')
 }
 .card-electric-stage-1 {
     background-image: url('img/Stage 1/SS_Stage1_Lightning.png')
@@ -896,7 +898,7 @@ select {
 }
 
 .card-fighting-basic {
-    background-image: url(img/Basic/SS_Basic_Fighting.png)
+    background-image: url('img/Basic/SS_Basic_Fighting.png')
 }
 .card-fighting-stage-1 {
     background-image: url('img/Stage 1/SS_Stage1_Fighting.png')
@@ -906,7 +908,7 @@ select {
 }
 
 .card-fire-basic {
-    background-image: url(img/Basic/SS_Basic_Fire.png);
+    background-image: url('img/Basic/SS_Basic_Fire.png');
 }
 .card-fire-stage-1 {
     background-image: url('img/Stage 1/SS_Stage1_Fire.png')
@@ -916,7 +918,7 @@ select {
 }
 
 .card-grass-basic {
-    background-image: url(img/Basic/SS_Basic_Grass.png)
+    background-image: url('img/Basic/SS_Basic_Grass.png')
 }
 .card-grass-stage-1 {
     background-image: url('img/Stage 1/SS_Stage1_Grass.png')
@@ -926,7 +928,7 @@ select {
 }
 
 .card-metal-basic {
-    background-image: url(img/Basic/SS_Basic_Metal.png)
+    background-image: url('img/Basic/SS_Basic_Metal.png')
 }
 .card-metal-stage-1 {
     background-image: url('img/Stage 1/SS_Stage1_Metal.png')
@@ -936,7 +938,7 @@ select {
 }
 
 .card-normal-basic {
-    background-image: url(img/Basic/SS_Basic_Colorless.png)
+    background-image: url('img/Basic/SS_Basic_Colorless.png')
 }
 .card-normal-stage-1 {
     background-image: url('img/Stage 1/SS_Stage1_Colorless.png')
@@ -946,7 +948,7 @@ select {
 }
 
 .card-psychic-basic {
-    background-image: url(img/Basic/SS_Basic_Psychic.png)
+    background-image: url('img/Basic/SS_Basic_Psychic.png')
 }
 .card-psychic-stage-1 {
     background-image: url('img/Stage 1/SS_Stage1_Psychic.png')
@@ -956,7 +958,7 @@ select {
 }
 
 .card-water-basic {
-    background-image: url(img/Basic/SS_Basic_Water.png)
+    background-image: url('img/Basic/SS_Basic_Water.png')
 }
 .card-water-stage-1 {
     background-image: url('img/Stage 1/SS_Stage1_Water.png')
