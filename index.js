@@ -350,14 +350,22 @@ function dropdownUpdate(type, ul, value) {
 // TYPE FUNCTION ****
 const typeList = document.getElementById('type-list')
 const typeImg = document.getElementById('current-type-img')
+const typesArray = document.querySelectorAll('.select-type')
 
-document.querySelectorAll('.select-type').forEach(type => {
-    type.onclick = () => updateType(type.getAttribute("value"))
+typesArray.forEach(type => {
+    type.onclick = () => updateType(type)
 })
 
-function updateType(value) {
+let pastTypeElement = ''
+
+function updateType(type) {
+    if (pastTypeElement) {
+        pastTypeElement.classList.remove('highlight')
+    }
+    pastTypeElement = type
+    pastTypeElement.classList.add('highlight')
     pastType = currentType
-    currentType = value
+    currentType = type.getAttribute('value')
 }
 
 // ABILITY FUNCTION ****
@@ -669,6 +677,63 @@ document.querySelectorAll('.resistance-type').forEach(type => {
     type.onclick = () => updateResistance(type.getAttribute("value"))
 })
 
+// FOCUS FUNCTIONS
 
+function focused(element) {
+    $(document).ready(function () {
+        const changed = document.querySelector(`label[for="${element}"]`)
+        const focused = $(`input[name="${element}"]`)
+        focused.focus(() => changed.classList.add('focused'))
+        focused.focusout(() => changed.classList.remove('focused'))
+    })
+}
+
+function hovered(element) {
+    $(document).ready(function () {
+        const changed = document.querySelector(`label[for="${element}"]`)
+        const focused = $(`select[name="${element}"]`)
+        focused.hover(() => changed.classList.add('focused'), () => changed.classList.remove('focused'))
+    })
+}
+
+function heightFocused(element) {
+    $(document).ready(function () {
+        const changed = document.querySelector(`label[for="${element}"]`)
+        const focused = $(`input[name="${element}"]`)
+        const height = document.querySelector('.height')
+        focused.focus(() => changed.classList.add('focused'))
+        focused.focus(() => height.classList.add('focused'))
+        focused.focusout(() => changed.classList.remove('focused'))
+        focused.focusout(() => height.classList.remove('focused'))
+    })
+}
+
+function textareaFocused(element) {
+    $(document).ready(function () {
+        const changed = document.querySelector(`label[for="${element}"]`)
+        const focused = $(`textarea[name="${element}"]`)
+        focused.focus(() => changed.classList.add('focused'))
+        focused.focusout(() => changed.classList.remove('focused'))
+    })
+}
+
+focused('name')
+focused('hp')
+hovered('stage')
+focused('evolves-from')
+focused('pokedex-number')
+focused('category')
+heightFocused('feet')
+heightFocused('inches')
+focused('weight')
+focused('ability-name')
+textareaFocused('ability-text')
+focused('attack1-name')
+focused('attack-damage-1')
+textareaFocused('attack-text-1')
+focused('attack2-name')
+focused('attack-damage-2')
+textareaFocused('attack-text-2')
+hovered('retreat')
 
 updateContent()

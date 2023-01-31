@@ -494,9 +494,11 @@ body {
 input,
 select {
     font-size: 12pt;
+    height: 25px;
 }
 
 label,
+textarea,
 input {
     margin: 4px;
 }
@@ -508,6 +510,17 @@ select {
     background-color: white;
     box-shadow: 0 0 15px var(--darkblue) inset;
     border: 1px solid white;
+    border-radius: 4px;
+}
+
+input:focus,
+textarea:focus,
+option:hover,
+select:hover {
+    outline: 1px solid var(--yellow);
+    border: 1px solid var(--yellow);
+    box-shadow: none;
+    background-color: white;
 }
 
 textarea,
@@ -515,6 +528,16 @@ option,
 input,
 select {
     font-family: monospace;
+}
+
+label.focused {
+    color: var(--yellow);
+    text-shadow: 1px 0 1px #ad900f, 0 1px 1px #ad900f;
+}
+
+p.focused {
+    color: var(--yellow);
+    text-shadow: 1px 0 1px #ad900f, 0 1px 1px #ad900f;
 }
 
 /* * * NAME INPUTS * * */
@@ -544,15 +567,13 @@ select {
     margin: auto;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: fit-content;
+    width: 378px;
+    height: 45px;
 }
 
 #type-list {
     display: flex;
     list-style-type: none;
-    gap: 5px;
 }
 
 .select-type {
@@ -562,16 +583,24 @@ select {
     justify-content: center;
     width: 36px;
     height: 36px;
-    outline: 1px solid var(--offwhite);
+    outline: 2px solid var(--offwhite);
     border-radius: 6px;
     background-color: var(--offwhite);
     box-shadow: 0 0 15px var(--darkblue) inset;
+    transition: 0.3s;
+    margin: 0 3px 0 3px;
+}
+
+.select-type.highlight {
+    outline: 2px solid white;
+    box-shadow: none;
+    background-color: transparent;
 }
 
 .select-type:hover {
     outline: 2px solid var(--yellow);
-    box-shadow: 0 0 15px var(--yellow) inset;
-    border-radius: 6px;
+    box-shadow: none;
+    background-color: white;
 }
 
 .select-type > img {
@@ -618,7 +647,8 @@ select {
 
 .type-selector li:hover {
     outline: 2px solid var(--yellow);
-    box-shadow: 0 0 15px var(--yellow) inset;
+    box-shadow: none;
+    background-color: white;
     border-radius: 6px;
 }
 
@@ -665,6 +695,7 @@ select {
     border-top: 3px solid var(--offwhite);
     border-bottom: 1px solid var(--offwhite);
     border-radius: 10px 10px 2px 2px;
+    background: linear-gradient(to bottom, var(--lightblue),  var(--darkblue), transparent);
 }
 
 .border-bottom {
