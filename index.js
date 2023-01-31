@@ -700,7 +700,7 @@ function heightFocused(element) {
     $(document).ready(function () {
         const changed = document.querySelector(`label[for="${element}"]`)
         const focused = $(`input[name="${element}"]`)
-        const height = document.querySelector('.height')
+        const height = document.querySelector('.ht')
         focused.focus(() => changed.classList.add('focused'))
         focused.focus(() => height.classList.add('focused'))
         focused.focusout(() => changed.classList.remove('focused'))
