@@ -9,7 +9,7 @@
     <script src=
     "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
-    <title>Custom Card Maker</title>
+    <title>Pokémon Card Maker</title>
 </head>
 <body>
     <div id="background"></div>
@@ -145,6 +145,7 @@
                                             <li value="fighting" class="cost-1-1"><img src="img/fighting.png" alt="fighting"></li>
                                             <li value="dark" class="cost-1-1"><img src="img/dark.png" alt="dark"></li>
                                             <li value="metal" class="cost-1-1"><img src="img/metal.png" alt="metal"></li>
+                                            <li value="no-cost" class="cost-1-1"><img src="img/energy/no-cost-energy.png" alt="no_cost"></li>
                                         </ul>
                                     </div>
                                     <div class="arrowbox" id="attack-1-cost-1-button">
@@ -168,6 +169,7 @@
                                             <li value="fighting" class="cost-1-2"><img src="img/fighting.png" alt="fighting"></li>
                                             <li value="dark" class="cost-1-2"><img src="img/dark.png" alt="dark"></li>
                                             <li value="metal" class="cost-1-2"><img src="img/metal.png" alt="metal"></li>
+                                            <li value="no-cost" class="cost-1-2"><img src="img/energy/no-cost-energy.png" alt="no_cost"></li>
                                         </ul>
                                     </div>
                                     <div class="arrowbox" id="attack-1-cost-2-button">
@@ -191,6 +193,7 @@
                                             <li value="fighting" class="cost-1-3"><img src="img/fighting.png" alt="fighting"></li>
                                             <li value="dark" class="cost-1-3"><img src="img/dark.png" alt="dark"></li>
                                             <li value="metal" class="cost-1-3"><img src="img/metal.png" alt="metal"></li>
+                                            <li value="no-cost" class="cost-1-3"><img src="img/energy/no-cost-energy.png" alt="no_cost"></li>
                                         </ul>
                                     </div>
                                     <div class="arrowbox" id="attack-1-cost-3-button">
@@ -214,6 +217,7 @@
                                             <li value="fighting" class="cost-1-4"><img src="img/fighting.png" alt="fighting"></li>
                                             <li value="dark" class="cost-1-4"><img src="img/dark.png" alt="dark"></li>
                                             <li value="metal" class="cost-1-4"><img src="img/metal.png" alt="metal"></li>
+                                            <li value="no-cost" class="cost-1-4"><img src="img/energy/no-cost-energy.png" alt="no_cost"></li>
                                         </ul>
                                     </div>
                                     <div class="arrowbox" id="attack-1-cost-4-button">
@@ -262,6 +266,7 @@
                                             <li value="fighting" class="cost-2-1"><img src="img/fighting.png" alt="fighting"></li>
                                             <li value="dark" class="cost-2-1"><img src="img/dark.png" alt="dark"></li>
                                             <li value="metal" class="cost-2-1"><img src="img/metal.png" alt="metal"></li>
+                                            <li value="no-cost" class="cost-2-1"><img src="img/energy/no-cost-energy.png" alt="no_cost"></li>
                                         </ul>
                                     </div>
                                     <div class="arrowbox" id="attack-2-cost-1-button">
@@ -285,6 +290,7 @@
                                             <li value="fighting" class="cost-2-2"><img src="img/fighting.png" alt="fighting"></li>
                                             <li value="dark" class="cost-2-2"><img src="img/dark.png" alt="dark"></li>
                                             <li value="metal" class="cost-2-2"><img src="img/metal.png" alt="metal"></li>
+                                            <li value="no-cost" class="cost-2-2"><img src="img/energy/no-cost-energy.png" alt="no_cost"></li>
                                         </ul>
                                     </div>
                                     <div class="arrowbox" id="attack-2-cost-2-button">
@@ -308,6 +314,7 @@
                                             <li value="fighting" class="cost-2-3"><img src="img/fighting.png" alt="fighting"></li>
                                             <li value="dark" class="cost-2-3"><img src="img/dark.png" alt="dark"></li>
                                             <li value="metal" class="cost-2-3"><img src="img/metal.png" alt="metal"></li>
+                                            <li value="no-cost" class="cost-2-3"><img src="img/energy/no-cost-energy.png" alt="no_cost"></li>
                                         </ul>
                                     </div>
                                     <div class="arrowbox" id="attack-2-cost-3-button">
@@ -331,6 +338,7 @@
                                             <li value="fighting" class="cost-2-4"><img src="img/fighting.png" alt="fighting"></li>
                                             <li value="dark" class="cost-2-4"><img src="img/dark.png" alt="dark"></li>
                                             <li value="metal" class="cost-2-4"><img src="img/metal.png" alt="metal"></li>
+                                            <li value="no-cost" class="cost-2-4"><img src="img/energy/no-cost-energy.png" alt="no_cost"></li>
                                         </ul>
                                     </div>
                                     <div class="arrowbox" id="attack-2-cost-4-button">
@@ -375,7 +383,7 @@
                         <div class="resistance-selector type-selector">
                             <p class="resistance-label">Resistance:</p>
                             <div id="resistance-dropdown" class="dropdown-container resistance-dropdown">
-                                <div class="current-type type-closed">
+                                <div id="resistance_onclick" class="current-type">
                                     <div id="current-resistance">
                                     </div>
                                     <ul id="resistance-list" class="dropdown">

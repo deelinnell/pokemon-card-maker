@@ -266,6 +266,7 @@ body {
     position: relative;
     display: flex;
     align-items: center;
+    height: 28px;
 }
 
 .attack-main p {
@@ -501,6 +502,11 @@ label,
 textarea,
 input {
     margin: 4px;
+    padding-left: 5px;
+}
+
+textarea {
+    padding-top: 2px;
 }
 
 input,
@@ -514,7 +520,9 @@ select {
 }
 
 input:focus,
+input:hover,
 textarea:focus,
+textarea:hover,
 option:hover,
 select:hover {
     outline: 1px solid var(--yellow);
@@ -620,6 +628,12 @@ p.focused {
     margin: 5px 0 5px 0;
 }
 
+.current-type.focus {
+    outline: 1px solid white;
+    box-shadow: none;
+    background-color: transparent;
+}
+
 .dropdown-container {
     display: flex;
     flex-direction: row;
@@ -634,9 +648,8 @@ p.focused {
     display: flex;
     list-style-type: none;
     border-radius: 6px;
-    outline: 1px solid var(--offwhite);
+    outline: 2px solid var(--yellow);
     background-color: white;
-    box-shadow: 0 0 15px var(--darkblue) inset;
 }
 
 .type-selector li {
@@ -754,7 +767,7 @@ p.focused {
 }
 
 #category {
-    width: 90px;
+    width: 130px;
 }
 
 /* * * ATTACKS INPUT * * */

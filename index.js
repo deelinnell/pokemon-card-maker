@@ -307,6 +307,10 @@ function attack2Dropdown() {
 }
 
 // ******** TYPE DROPDOWN LISTS ********
+const attack1label = document.querySelector('.attack-1-label')
+const attack2label = document.querySelector('.attack-2-label')
+const weaknessLabel = document.querySelector('.weakness-label')
+const resistanceLabel = document.querySelector('.resistance-label')
 
 window.addEventListener('click', function (e) {
     const dropdown = document.querySelectorAll('.dropdown')
@@ -318,19 +322,25 @@ window.addEventListener('click', function (e) {
                 drop.parentElement.nextElementSibling.firstElementChild.classList.add('down')
             }
         })
+        attack1label.classList.remove('focused')
+        attack2label.classList.remove('focused')
+        weaknessLabel.classList.remove('focused')
+        resistanceLabel.classList.remove('focused')
     }
 })
 
-function dropdown(ul) {
+function dropdown(ul, label) {
     if (ul.style.display === 'block') {
         ul.style.display = 'none'
         ul.parentElement.nextElementSibling.firstElementChild.classList.remove('up')
         ul.parentElement.nextElementSibling.firstElementChild.classList.add('down')
+        label.classList.remove('focused')
         return
     }
     ul.style.display = 'block'
     ul.parentElement.nextElementSibling.firstElementChild.classList.remove('down')
     ul.parentElement.nextElementSibling.firstElementChild.classList.add('up')
+    label.classList.add('focused')
 }
 
 function dropdownUpdate(type, ul, value) {
@@ -338,8 +348,10 @@ function dropdownUpdate(type, ul, value) {
         const img = document.createElement('img')
         img.setAttribute('src', 'img/' + value + '.png')
         type.replaceChildren(img)
+        ul.parentElement.classList.add('focus')
     } else {
         type.replaceChildren('')
+        ul.parentElement.classList.remove('focus')
     }
 
     ul.style.display = 'none'
@@ -413,11 +425,13 @@ const energyImg = 'img/energy/'
 const attack1cost1List = document.getElementById('attack-cost-list-1-1')
 const attack1cost1Img = document.getElementById('current-cost-1-1')
 
-document.getElementById('attack-1-cost-1-button').onclick = () => dropdown(attack1cost1List)
+document.getElementById('attack-1-cost-1-button').onclick = () => dropdown(attack1cost1List, attack1label)
+document.getElementById('attack-1-cost-1-button').onclick = () => dropdown(attack1cost1List, attack1label)
 
 function updateAttack1Cost1(value) {
     dropdownUpdate(attack1cost1Img, attack1cost1List, value)
     attack1cost1 = value
+    attack1label.classList.remove('focused')
 }
 
 document.querySelectorAll('.cost-1-1').forEach(type => {
@@ -428,11 +442,12 @@ document.querySelectorAll('.cost-1-1').forEach(type => {
 const attack1cost2List = document.getElementById('attack-cost-list-1-2')
 const attack1cost2Img = document.getElementById('current-cost-1-2')
 
-document.getElementById('attack-1-cost-2-button').onclick = () => dropdown(attack1cost2List)
+document.getElementById('attack-1-cost-2-button').onclick = () => dropdown(attack1cost2List, attack1label)
 
 function updateAttack1Cost2(value) {
     dropdownUpdate(attack1cost2Img, attack1cost2List, value)
     attack1cost2 = value
+    attack1label.classList.remove('focused')
 }
 
 document.querySelectorAll('.cost-1-2').forEach(type => {
@@ -443,11 +458,12 @@ document.querySelectorAll('.cost-1-2').forEach(type => {
 const attack1cost3List = document.getElementById('attack-cost-list-1-3')
 const attack1cost3Img = document.getElementById('current-cost-1-3')
 
-document.getElementById('attack-1-cost-3-button').onclick = () => dropdown(attack1cost3List)
+document.getElementById('attack-1-cost-3-button').onclick = () => dropdown(attack1cost3List, attack1label)
 
 function updateAttack1Cost3(value) {
     dropdownUpdate(attack1cost3Img, attack1cost3List, value)
     attack1cost3 = value
+    attack1label.classList.remove('focused')
 }
 
 document.querySelectorAll('.cost-1-3').forEach(type => {
@@ -458,11 +474,12 @@ document.querySelectorAll('.cost-1-3').forEach(type => {
 const attack1cost4List = document.getElementById('attack-cost-list-1-4')
 const attack1cost4Img = document.getElementById('current-cost-1-4')
 
-document.getElementById('attack-1-cost-4-button').onclick = () => dropdown(attack1cost4List)
+document.getElementById('attack-1-cost-4-button').onclick = () => dropdown(attack1cost4List, attack1label)
 
 function updateAttack1Cost4(value) {
     dropdownUpdate(attack1cost4Img, attack1cost4List, value)
     attack1cost4 = value
+    attack1label.classList.remove('focused')
 }
 
 document.querySelectorAll('.cost-1-4').forEach(type => {
@@ -532,11 +549,12 @@ function createAttack1() {
 const attack2cost1List = document.getElementById('attack-cost-list-2-1')
 const attack2cost1Img = document.getElementById('current-cost-2-1')
 
-document.getElementById('attack-2-cost-1-button').onclick = () => dropdown(attack2cost1List)
+document.getElementById('attack-2-cost-1-button').onclick = () => dropdown(attack2cost1List, attack2label)
 
 function updateAttack2Cost1(value) {
     dropdownUpdate(attack2cost1Img, attack2cost1List, value)
     attack2cost1 = value
+    attack2label.classList.remove('focused')
 }
 
 document.querySelectorAll('.cost-2-1').forEach(type => {
@@ -547,11 +565,12 @@ document.querySelectorAll('.cost-2-1').forEach(type => {
 const attack2cost2List = document.getElementById('attack-cost-list-2-2')
 const attack2cost2Img = document.getElementById('current-cost-2-2')
 
-document.getElementById('attack-2-cost-2-button').onclick = () => dropdown(attack2cost2List)
+document.getElementById('attack-2-cost-2-button').onclick = () => dropdown(attack2cost2List, attack2label)
 
 function updateAttack2Cost2(value) {
     dropdownUpdate(attack2cost2Img, attack2cost2List, value)
     attack2cost2 = value
+    attack2label.classList.remove('focused')
 }
 
 document.querySelectorAll('.cost-2-2').forEach(type => {
@@ -562,11 +581,12 @@ document.querySelectorAll('.cost-2-2').forEach(type => {
 const attack2cost3List = document.getElementById('attack-cost-list-2-3')
 const attack2cost3Img = document.getElementById('current-cost-2-3')
 
-document.getElementById('attack-2-cost-3-button').onclick = () => dropdown(attack2cost3List)
+document.getElementById('attack-2-cost-3-button').onclick = () => dropdown(attack2cost3List, attack2label)
 
 function updateAttack2Cost3(value) {
     dropdownUpdate(attack2cost3Img, attack2cost3List, value)
     attack2cost3 = value
+    attack2label.classList.remove('focused')
 }
 
 document.querySelectorAll('.cost-2-3').forEach(type => {
@@ -577,11 +597,12 @@ document.querySelectorAll('.cost-2-3').forEach(type => {
 const attack2cost4List = document.getElementById('attack-cost-list-2-4')
 const attack2cost4Img = document.getElementById('current-cost-2-4')
 
-document.getElementById('attack-2-cost-4-button').onclick = () => dropdown(attack2cost4List)
+document.getElementById('attack-2-cost-4-button').onclick = () => dropdown(attack2cost4List, attack2label)
 
 function updateAttack2Cost4(value) {
     dropdownUpdate(attack2cost4Img, attack2cost4List, value)
     attack2cost4 = value
+    attack2label.classList.remove('focused')
 }
 
 document.querySelectorAll('.cost-2-4').forEach(type => {
@@ -651,11 +672,12 @@ function createAttack2() {
 const weaknessList = document.getElementById('weakness-list')
 const weaknessImg = document.getElementById('current-weakness')
 
-document.getElementById('weakness-button').onclick = () => dropdown(weaknessList)
+document.getElementById('weakness-button').onclick = () => dropdown(weaknessList, weaknessLabel)
 
 function updateWeakness(value) {
     dropdownUpdate(weaknessImg, weaknessList, value)
     weakness = value
+    weaknessLabel.classList.remove('focused')
 }
 
 document.querySelectorAll('.weakness-type').forEach(type => {
@@ -666,11 +688,13 @@ document.querySelectorAll('.weakness-type').forEach(type => {
 const resistanceList = document.getElementById('resistance-list')
 const resistanceImg = document.getElementById('current-resistance')
 
-document.getElementById('resistance-button').onclick = () => dropdown(resistanceList)
+document.getElementById('resistance-button').onclick = () => dropdown(resistanceList, resistanceLabel)
 
 function updateResistance(value) {
     dropdownUpdate(resistanceImg, resistanceList, value)
     resistance = value
+    resistanceLabel.classList.remove('focused')
+    resistanceList.style.display = 'none'
 }
 
 document.querySelectorAll('.resistance-type').forEach(type => {
