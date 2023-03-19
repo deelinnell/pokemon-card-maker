@@ -249,14 +249,13 @@ body {
 
 .ability-header > p {
     color: #af0009;
-    font-size: 1.6vw;
+    font-size: 1.7vw;
 }
 
 .ability-container > p {
     position: relative;
-    font-family: sans-serif, Arial;
-    font-weight: bold;
-    font-size: 0.75vw;
+    font-family: Arial, sans-serif;
+    font-size: 1.1vw;
     padding: 0 1.5% 0% 1.5%;
 }
 
@@ -279,7 +278,7 @@ body {
 }
 
 .attack-main p {
-    font-size: 1.5vw;
+    font-size: 1.6vw;
     font-weight: bold;
 }
 
@@ -293,7 +292,6 @@ body {
 }
 
 .attack-name {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     position: absolute;
     left: 29.6%;
 }
@@ -305,9 +303,8 @@ body {
 }
 
 .attack-text {
-    font-family: sans-serif, Arial;
-    font-weight: bold;
-    font-size: 0.75vw;
+    font-family: Arial, sans-serif;
+    font-size: 1.1vw;
     padding: 0.05vw 0.25vw 0% 0.25vw;
 }
 

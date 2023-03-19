@@ -126,7 +126,7 @@ function updateContent() {
     if (currentType == 'dark') {
         document.querySelector('body').style.color = 'white'
     } else {
-        document.querySelector('body').style.color = '#111'
+        document.querySelector('body').style.color = '#000'
     }
 
     const attack1 = createAttack1()
