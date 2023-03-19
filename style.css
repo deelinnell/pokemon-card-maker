@@ -18,7 +18,7 @@ body {
 
 #background {
     background-image: url('img/background.png');
-    background-position: top;
+    background-position: center;
     background-size: contain cover;
     position: absolute;
     top: 0;
@@ -43,7 +43,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-self: flex-start;
+    justify-self: center;
     top: 15%;
     height: fit-content;
 }
@@ -52,8 +52,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 380px;
-    height: 235px;
+    width: 20vw;
+    height: 25vw;
+    max-width: 380px;
+    max-height: 235px;
     margin-bottom: 20px;
     outline: 5px dotted var(--white);
     border-radius: 15px;
@@ -71,8 +73,10 @@ body {
     outline: 5px dotted var(--white);
     border-radius: 40px 12px 55px 12px;
     box-shadow: 0 0 50px var(--offwhite) inset;
-    width: 160px;
-    height: 160px;
+    width: 10vw;
+    height: 10vw;
+    max-width: 160px;
+    max-height: 160px;
     margin-bottom: 10px;
     color: white;
     text-shadow: 1px 0 1px #177edf, 0 1px 1px #177edf;
@@ -88,8 +92,10 @@ body {
 
 .img-container {
     position: relative;
-    width: 452px;
-    height: 628px;
+    width: 32vw;
+    height: 44.4vw;
+    max-width: 620px;
+    max-height: 862px;
     align-self: center;
     justify-self: center;
 }
@@ -99,12 +105,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 1.5rem;
+    border-radius: 4.5%;
     width: 100%;
     height: 100%;
-    box-shadow: 5px 5px 15px black;
     background-size: contain;
     background-repeat: no-repeat;
+    box-shadow: 5px 5px 15px black;
 }
 
 .card-container {
@@ -129,28 +135,28 @@ body {
     align-items: center;
     justify-content: space-between;
     height: 14%;
-    margin-left: 17%;
+    margin-left: 16%;
     margin-right: 9.8%;
 }
 
 .card-name {
-    font-size: 21pt;
+    font-size: 2vw;
 }
 
 .hp-container {
     position: relative;
-    top: 3px;
+    top: 0.2vw;
 }
 
 .card-hp {
     position: relative;
-    font-size: 7pt;
+    font-size: 0.8vw;
     display: inline-block;
-    left: 3px;
+    left: 0.2vw;
 }
 
 .hp {
-    font-size: 19pt;
+    font-size: 2vw;
     font-family: sans-serif;
     display: inline-block;
 }
@@ -167,22 +173,23 @@ body {
 .small-img {
     display: none;
     position: absolute;
-    top: -11px;
-    left: -13px;
-    width: 51px;
-    height: 50px;
-    border-radius: 14px 6px 20px 6px;
+    top: -4.1%;
+    left: -3.1%;
+    width: 13%;
+    height: 20.5%;
+    border-radius: 22% 8% 40% 8%;
     overflow: hidden;
 }
 
 .card-picture > p {
     position: absolute;
-    top: 2px;
-    left: 46px;
+    top: 0.4%;
+    left: 12%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-style: italic;
-    font-size: 8pt;
-    color: #333;
-    text-shadow: 0 0 4px rgb(238, 238, 238);
+    font-size: 0.8vw;
+    color: #444;
+    text-shadow: 0px 1px 1px rgb(255, 255, 255), 0px -1px 1px rgb(255, 255, 255), 1px 0px 1px rgb(255, 255, 255), -1px 0px 1px rgb(255, 255, 255);
 }
 
 .card-img {
@@ -190,8 +197,8 @@ body {
     top: 28.7%; 
     right: 49.8%;
     transform: translate(50%,-50%);
-    width: 380px;
-    height: 235px;
+    width: 84%;
+    height: 38%;
 }
 
 .card-img > img,
@@ -209,13 +216,13 @@ body {
 }
 
 .stats-text > p {
-    font-size: 7pt;
-    color: #222;
-    padding: 5px;
+    font-size: 0.6vw;
+    color: #333;
+    padding: 1%;
     padding-bottom: 1px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    text-shadow: 0 0 2px white;
+    text-shadow: 0px 1px 1px rgb(255, 255, 255), 0px -1px 1px rgb(255, 255, 255), 1px 0px 1px rgb(255, 255, 255), -1px 0px 1px rgb(255, 255, 255);
 }
 
 /* * * CARD BOTTOM * * */
@@ -231,8 +238,8 @@ body {
 
 .ability-container img {
     position: relative;
-    height: 28px;
-    right: 3px;
+    height: 2vw;
+    right: 1%;
 }
 
 .ability-header {
@@ -242,35 +249,37 @@ body {
 
 .ability-header > p {
     color: #af0009;
-    font-size: 17pt;
-    padding-left: 2px;
+    font-size: 1.6vw;
 }
 
 .ability-container > p {
     position: relative;
     font-family: sans-serif, Arial;
     font-weight: bold;
-    font-size: 9pt;
-    padding: 0 5px 3px 5px;
+    font-size: 0.75vw;
+    padding: 0 1.5% 0% 1.5%;
 }
 
 .attack-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    margin: 0 13px 0 13px;
+    justify-content: space-evenly;
+    margin: 0 3% 0 3%;
     height: 75%;
+}
+
+.attack {
+    height: fit-content;
 }
 
 .attack-main {
     position: relative;
     display: flex;
     align-items: center;
-    height: 28px;
 }
 
 .attack-main p {
-    font-size: 17pt;
+    font-size: 1.5vw;
     font-weight: bold;
 }
 
@@ -279,14 +288,14 @@ body {
 }
 
 .attack-cost img {
-    width: 28px;
-    height: 28px;
+    width: 1.7vw;
+    height: 1.7vw;
 }
 
 .attack-name {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     position: absolute;
-    left: 120px;
+    left: 29.6%;
 }
 
 .attack-damage {
@@ -298,8 +307,8 @@ body {
 .attack-text {
     font-family: sans-serif, Arial;
     font-weight: bold;
-    font-size: 9pt;
-    padding: 3px 5px 5px 6px;
+    font-size: 0.75vw;
+    padding: 0.05vw 0.25vw 0% 0.25vw;
 }
 
 .attack-cost {
@@ -329,16 +338,18 @@ body {
     font-family: Arial, sans-serif;
     font-weight: bold;
     color: #111;
-    padding-top: 1px;
-    font-size: 11pt;
-    padding-left: 3px;
+    padding-top: 0%;
+    font-size: 1vw;
+    padding-left: 10%;
 }
 
 #retreat-img img,
 #weakness-img img,
 #resistance-img img {
-    height: 14px;
-    width: 14px;
+    position: relative;
+    top: -1px;
+    height: 1.1vw;
+    width: 1.1vw;
 }
 
 .weakness {
@@ -370,7 +381,7 @@ body {
     display: flex;
     flex-direction: row;
     align-content: center;
-    left: 75%;
+    left: 74%;
 }
 
 /* * * INPUT STYLES * * */
@@ -407,7 +418,7 @@ body {
     min-width: 400px;
     overflow: scroll;
     overflow-x: hidden;
-    justify-self: flex-end;
+    justify-self: center;
     color: black;
     transition: 0.3s;
 }
@@ -417,7 +428,6 @@ body {
 .input-container h2 {
     color: white;
     text-shadow: 1px 0 1px #1365b3, 0 1px 1px #1365b3;
-    margin: 4px;
 }
 
 .input-container h2 {
@@ -501,7 +511,7 @@ select {
 label,
 textarea,
 input {
-    margin: 4px;
+    margin: 4px 0;
     padding-left: 5px;
 }
 
@@ -625,6 +635,7 @@ p.focused {
     border-radius: 6px;
     background-color: white;
     box-shadow: 0 0 15px var(--darkblue) inset;
+    outline: 1px solid white;
     margin: 5px 0 5px 0;
 }
 
@@ -745,6 +756,26 @@ p.focused {
 #stats-body > div {
     display: flex;
     flex-direction: row;
+    align-self: flex-start;
+}
+
+#stats-body div:nth-child(1),
+#stats-body div:nth-child(2) {
+    padding-left: 5%;
+}
+
+#stats-body input {
+    margin-left: 6px;
+    margin-right: 2px;
+}
+
+.input-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5%;
+    padding-left: 8%;
 }
 
 #pokedex-number {
@@ -911,7 +942,7 @@ p.focused {
     right: 5%;
     bottom: 5%;
     filter: invert(1);
-    height: 100px;
+    height: 5vw;
     transition: 1s;
 }
 

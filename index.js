@@ -168,7 +168,7 @@ function updateContent() {
 
     setTimeout(() => {
         updateContent()
-    }, "500")
+    }, "333")
 }
 
 // ***************** INPUT MENU BARS *****************
@@ -207,7 +207,7 @@ function statsDropdown() {
     const arrow = document.getElementById('stats-arrow')
 
     if ($('#stats-dropdown').hasClass('closed')) {
-        body.style.height = '100px'
+        body.style.height = '150px'
         body.classList.add('border-bottom')
         statsInput.classList.remove('closed')
         statsInput.classList.add('opened')
@@ -257,7 +257,7 @@ function attack1Dropdown() {
     const arrow = document.getElementById('attack-1-arrow')
 
     if ($('#attack-1-dropdown').hasClass('closed')) {
-        body.style.height = '255px'
+        body.style.height = '260px'
         body.classList.add('border-bottom')
         attack1Input.classList.remove('closed')
         attack1Input.classList.add('opened')
@@ -286,7 +286,7 @@ function attack2Dropdown() {
     const arrow = document.getElementById('attack-2-arrow')
 
     if ($('#attack-2-dropdown').hasClass('closed')) {
-        body.style.height = '255px'
+        body.style.height = '260px'
         body.classList.add('border-bottom')
         attack2Input.classList.remove('closed')
         attack2Input.classList.add('opened')
