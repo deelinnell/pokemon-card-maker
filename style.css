@@ -216,13 +216,12 @@ body {
 }
 
 .stats-text > p {
-    font-size: 0.6vw;
-    color: #333;
+    font-size: 0.65vw;
+    color: #111;
     padding: 1%;
-    padding-bottom: 1px;
-    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 1%;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bold;
-    text-shadow: 0px 1px 1px rgb(255, 255, 255), 0px -1px 1px rgb(255, 255, 255), 1px 0px 1px rgb(255, 255, 255), -1px 0px 1px rgb(255, 255, 255);
 }
 
 /* * * CARD BOTTOM * * */
