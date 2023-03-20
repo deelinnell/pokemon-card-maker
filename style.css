@@ -311,7 +311,7 @@ body {
     left: 29.6%;
 }
 
-.attack-damage {
+p.attack-damage {
     font-size: min(27.2px, 1.7vw);
     font-family: 'Plus Jakarta Sans', sans-serif;
     transform: scaleX(0.9);
